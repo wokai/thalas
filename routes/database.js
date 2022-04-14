@@ -30,20 +30,16 @@ const colors  = require('colors');
 const { Device, XenonOsStatus, Episode, MedibusVentRespData, MedibusVentGasData, MedibusVentInhalData }   = require(path.join('..', 'model', 'database'));
 const General = require(path.join('..', 'config', 'general'));
 
+const episode_router = require('./episode');
+
 
 const router = express.Router();
 
+router.use('/episode', episode_router);
 
 /// Get complete list of all parameters
 router.get('/device',  function(request, result, next){
   Device.findAll().then(res => {
-    result.status(200).json(res);
-  });
-});
-
-
-router.get('/episode', function(request, result, next){
-  Episode.findAll().then(res => {
     result.status(200).json(res);
   });
 });
@@ -87,6 +83,7 @@ router.get('/inhal/:devid', function(request, result, next) {
     raw : true
   }).then(res => { result.status(200).json(res); });
 });
+
 
 
 /// ------------------------------------------------------------------------ ///
