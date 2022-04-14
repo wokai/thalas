@@ -1,0 +1,16 @@
+
+# This directory is large and needs to be locally ceated using 'npm install'
+/node_modules
+
+# There are many changes in this file
+package-lock.json
+
+# Debug files
+checksum_error.txt
+
+# Logfiles
+*.log
+
+# Local configuration file containing database passwords 
+# which supersedes defaults in 'general.js'
+/config/local.config.js

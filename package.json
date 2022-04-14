@@ -1,0 +1,20 @@
+{
+  "name": "thalas",
+  "version": "0.0.90",
+  "private": true,
+  "scripts": {
+    "start": "DEBUG=thalas:* PORT=4040 node ./bin/www"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "cookie-parser": "~1.4.4",
+    "dateformat": "^4.5.1",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "mysql2": "^2.3.3",
+    "request": "^2.88.2",
+    "sequelize": "^6.12.5",
+    "winston": "^3.7.2"
+  }
+}

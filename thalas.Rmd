@@ -1,0 +1,148 @@
+---
+title: "Thalas "
+author: "W. Kaisers"
+date: "07.01.2022"
+output:
+    html_document:
+        theme: default
+        toc: true
+        toc_depth: 3
+        number_sections: true
+---
+
+
+--------------------------------------------------------------------------------
+
+<!-- ----------------------------------------------------------------------- -->
+# Data definition
+<!-- ----------------------------------------------------------------------- -->
+
+
+## Basic entities
+
+ - A **device** is a data-capturing computer delivering measured values via 
+   *REST*-api. A device is identified by a name and an IP-address or a MAC
+   address. 
+   Devices carry location identifiers which may change over time.
+ - A **location** denotes an outlined physical position of a device recording.
+   It can be a room inside a building (with only one device) or a defined
+   place within a room containing multiple devices (for example a PACU).
+ - A **patient** is a person, represented by a medical record, on which 
+   device captured measurements are acquired.
+   
+
+## Interaction level entities
+
+ - A **connection** is a period of successful network communication between a
+   *thalas* server and a *device*.
+   during the time of a connection, the server and the device can communicate
+   with each other.
+   By specifying the *End-Time*, a connection expires.
+   Connections also manage Xenon RS232 interface status.
+ - A **RecordingSite** represents a device which is placed in a location.
+   In practice, this may mean for example, that a ventilator together with
+   a Xenon-device is inside a defined room.
+ - A **PatientAssociation** links a patient and a *RecordingSite*.
+   For the time of this association, all related recordings can be assigned to
+   the respective patient.
+    
+
+The entities in this level are subject to human interaction.
+Placing devices and patients in a location as well as booting of devices will
+be done manually.
+Thus, human input is required for correct establishing of associations.
+
+
+## Recordings
+
+Recordings emerge from data transfer from one or more Xenon clients to a thalas
+server.
+By itself, these recordings solely are associated with a device.
+Further meaningful utilization bases on association with a patient and this is
+usually done using locations.
+
+
+
+ - An **episode** is a series of uninterrupted observations captured by a
+  single device on a single patient in a single location.
+
+These definitions shall facilitate the association of captured recordings to
+an electronic medical record. Therefore:
+
+ - A location should be specified in a way allowing a 1:1 relation to an episode.
+  A criterion could be the existence of wall connections to which a device
+  needs to be connected.
+
+    
+The connections of data capturing servers to recording devices are fragile:
+ - A recording may be terminated by the device because a patient is
+   disconnected or a device has been turned off or 
+ - the network connection between server and device is lost.
+   
+ - A **recording** is the entirety of observations captured by a single
+    device during a single *connection*. It has been recorded in a single 
+    location. There may be changes of patients during a single recording.
+ - A **session** is a part of an episode which is observed on a single
+    therapeutic session (on a single patient).
+ - A **period** is a part of a session included in a single report.
+
+
+
+
+## Observations
+
+  - An **observation** is the measured value of a single parameter at a single
+    time point
+  - A **parameter** is the output of a specified measurement procedure 
+      as a surrogate for a defined entity for example *tidal volume* or
+      *F<sub>i</sub>O<sub>2</sub>*. Parameters are represented by unique ID's
+      for example [Snomed CT](https://www.snomed.org/)
+    
+
+
+--------------------------------------------------------------------------------
+
+<!-- ----------------------------------------------------------------------- -->
+# MySql
+<!-- ----------------------------------------------------------------------- -->
+
+
+## Create database
+
+ - Open admin terminal `sudo su`
+ - Login `mysql -u root`
+
+Create thalas database:
+```c
+CREATE DATABASE thalas;
+CREATE USER 'thalasroot'@'localhost' IDENTIFIED BY 'g3Rsa879:n4sqPkxz';
+GRANT ALL ON thalas.* TO 'thalasroot'@'localhost';
+```
+
+--------------------------------------------------------------------------------
+
+<!-- ----------------------------------------------------------------------- -->
+# Snomed CT
+<!-- ----------------------------------------------------------------------- -->
+´
+
+[Snomed](https://confluence.ihtsdotools.org/display/DOCGLOSS/SNOMED+CT+identifier):
+
+ - A *Snomed CT identifier* is a unique integer, applied to components
+ 
+ 
+--------------------------------------------------------------------------------
+
+<!-- ----------------------------------------------------------------------- -->
+# Chart.js
+<!-- ----------------------------------------------------------------------- -->
+
+## Installation
+
+
+ - `npm i date-fns chart.js chartjs-adapter-date-fns`
+
+
+
+
+

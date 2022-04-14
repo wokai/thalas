@@ -1,0 +1,1105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>11</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2585</x>
+      <y>484</y>
+      <w>231</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>_Location_
+--
+id: Integer
+name: String
+bg=#dfe3ee
+fg=#007bff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2882</x>
+      <y>286</y>
+      <w>231</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>_Device_
+--
+id: BigInteger
+ip: String
+mac: String
+bg=#dfe3ee
+fg=#007bff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3179</x>
+      <y>286</y>
+      <w>231</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>_Connection: Model_
+--
+id: Integer
+device: BigInteger
+hostConnected: Boolean
+begin: DateTime
+end: DateTime
+serverUp: boolean
+recording: Boolean
+bg=#ade4f9</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3476</x>
+      <y>286</y>
+      <w>231</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>_Recording: Model_
+--
+id: Integer | PK AI
+device: BigInteger
+connection: Integer
+location: Integer
+begin: DateTime
+end: DateTime
+bg=#7193ff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2585</x>
+      <y>693</y>
+      <w>231</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>_Patient_
+--
+id: Integer
+mrn: BigInteger
+begin: DateTime
+end: DateTime
+bg=#dfe3ee
+fg=#007bff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3476</x>
+      <y>902</y>
+      <w>231</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>_PatientReport: Model_
+--
+id:Integer
+association: Integer
+location: Integer
+patient: Integer
+begin: DateTime
+end: DateTime
+bg=#7193ff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3179</x>
+      <y>902</y>
+      <w>231</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>_ReportPeriod_
+--
+id: Integer
+patient: Integer
+bg=#ade4f9</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2882</x>
+      <y>693</y>
+      <w>231</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>_PatientAssociation_
+--
+id: Integer
+patient: BigInteger
+recordingSite: Integer
+begin: DateTime
+end: DateTime
+bg=#ade4f9</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2882</x>
+      <y>484</y>
+      <w>231</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>_RecordingSite_
+--
+id: Integer
+device: BigInteger
+location: Integer
+begin: DateTime
+end: DateTime
+bg=#ade4f9</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3476</x>
+      <y>693</y>
+      <w>231</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>_PatientRecording: Model_
+--
+id:Integer | PK AI
+association: Integer
+location: Integer
+patient: Integer
+begin: DateTime
+end: DateTime
+bg=#7193ff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3476</x>
+      <y>484</y>
+      <w>231</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>_LocatedRecording: Model_
+--
+id: Integer | PK AI
+device: Integer
+recordingSite: Integer
+begin: DateTime
+end: DateTime
+bg=#7193ff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2805</x>
+      <y>506</y>
+      <w>99</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;50.0;30.0;50.0;30.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2805</x>
+      <y>715</y>
+      <w>99</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;30.0;50.0;30.0;50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2805</x>
+      <y>506</y>
+      <w>99</w>
+      <h>286</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;240.0;30.0;240.0;30.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3102</x>
+      <y>715</y>
+      <w>396</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>340.0;30.0;30.0;30.0;30.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3102</x>
+      <y>506</y>
+      <w>396</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>340.0;50.0;30.0;50.0;30.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3850</x>
+      <y>517</y>
+      <w>231</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>_Observation: Model_
+--
+name: medibusParameter
+--
+id: Integer | PK AI
+device: BigInteger
+parameter: Integer
+recording: Integer
+location: Integer
+patient: Integer
+time: DateTime
+bg=#cbe395</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3850</x>
+      <y>176</y>
+      <w>231</w>
+      <h>253</h>
+    </coordinates>
+    <panel_attributes>_MedibusParameter: Model_
+--
+id: Integer | PK AI
+code: String
+hexCode: Integer
+description: String
+unit: String
+snomedid: Integer
+format: String
+factor: Integer | Def: 1
+m: String
+ll: Boolean
+hl: Boolean
+bg=#e2b9b3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3179</x>
+      <y>11</y>
+      <w>231</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>/model/devices
+--
+_Devices_
+--
+static StringToNumber
+static NubmerToString
+--
+async ping(ip)
+async checkDevice(ip)
+bg=#ade4f9</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3102</x>
+      <y>308</y>
+      <w>99</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;30.0;30.0;30.0;30.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>3399</x>
+      <y>308</y>
+      <w>99</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;40.0;30.0;40.0;30.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3476</x>
+      <y>0</y>
+      <w>231</w>
+      <h>187</h>
+    </coordinates>
+    <panel_attributes>_DeviceCheckResult: Model_
+--
+id: Integer | PK AI
+port: Integer
+online: Integer
+hostname: String
+freemem: BigInteger
+totalmem: BigInteger
+uptime: Double
+errno: Integer
+bg=#e2b9b3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>825</x>
+      <y>1859</y>
+      <w>187</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>ComStatus
+--
+ + online: boolean
+ + errno:  number
+ + code:   string
+halign=left
+bg=#dfe3ee
+fg=#007bff
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>2574</x>
+      <y>1397</y>
+      <w>264</w>
+      <h>209</h>
+    </coordinates>
+    <panel_attributes>/device
+--
+/ : device array
+/location
+--
+/ping/:devid
+/os/:devid
+--
+/port/paths/:devid
+/port/status/:devid
+/port/open/:devid
+/port/stop/:devid
+/port/close/:devid
+halign=left
+bg=#dfe3ee
+fg=#007bff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>374</x>
+      <y>1826</y>
+      <w>264</w>
+      <h>385</h>
+    </coordinates>
+    <panel_attributes>	/system
+--
++ interface: string
++ arch: string
++ cpus: [
+   + model
+   + speed
+   + times
+  ]
++ endianess: string
++ eol: string
++ freemem: number
++ hostname: string
++ networkInterfaces [
+     lo:
+     wlp64s0: [
+   	    0: {
+   	       address: string,
+   	       mac: string
+   	    }
+      ]
+    ]
+halign=left
+bg=#dfe3ee
+fg=#007bff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1661</x>
+      <y>935</y>
+      <w>297</w>
+      <h>121</h>
+    </coordinates>
+    <panel_attributes>deviceData
+--
+ + id: number
+ + ip: string
+ + port: number
+ + name: string
+ + online: bool
+halign=left
+bg=#dfe3ee
+fg=#007bff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>2068</x>
+      <y>627</y>
+      <w>297</w>
+      <h>253</h>
+    </coordinates>
+    <panel_attributes>portStatus
+--
+ + id: number
+ + ip: string
+ + port: number
+ + name: string
+ + online: bool
+--
+ + open : bool
+ + openText: 'Open' | 'Closed'
+ + path: string
+ + baudRate: number
+ + dataBits: number
+ + parity: string
+ + stopBits: number
+halign=left
+bg=#dfe3ee
+fg=#007bff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>2068</x>
+      <y>385</y>
+      <w>297</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>osStatus
+--
+ + id: number
+ + ip: string
+ + port: number
+ + name: string
+ + online: bool
+ + port: number
+ + interface: string
+ + hostname: string
+ + freemem: number
+ + totalmem: number
+ + uptime: number
+halign=left
+bg=#dfe3ee
+fg=#007bff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1661</x>
+      <y>1287</y>
+      <w>297</w>
+      <h>440</h>
+    </coordinates>
+    <panel_attributes>/config/general
+--
+language
+ + locale
+database
+ + user
+ + name
+ + password
+ + tables
+--
+locations :
+ + [ (units): {
+ 	id: number
+ 	name: string
+ 	rooms { id, name }
+ }]
+--
+devices
+ + name: string
+ + ip: string
+ + port: number
+inhalation
+ + id    : number
+ + name  : string
+ + label : string
+ + db    : string
+bg=#aa8db1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2090</x>
+      <y>1782</y>
+      <w>297</w>
+      <h>363</h>
+    </coordinates>
+    <panel_attributes>/model/xenon
+--
+_Xenon_
+--
+#port
+--
+static
+ + getXenonArray()
+--
+async
+ + initEpisode()
+ + endEpisode()
+ + newEpisode()
+ + getOsStatus()
+ + getPortPaths()
+ + getPortStatus()
+ + openPort()
+ + stopPort()
+ + closePort()
+ + getVentData()
+--
+bg=#7193ff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1661</x>
+      <y>1782</y>
+      <w>297</w>
+      <h>352</h>
+    </coordinates>
+    <panel_attributes>/model/device
+--
+_Device_
+--
+#id
+#ip
+#name
+#com
+--
+static
+ + stringToNumber(ip)
+ + numberToString(ip)
+--
+get
+ +id
+ +ip
+ +name
+--
+getArray()
+getDataObject()
+--
+async ping()
+async getClientRoute()
+bg=#7193ff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2200</x>
+      <y>2233</y>
+      <w>297</w>
+      <h>253</h>
+    </coordinates>
+    <panel_attributes>/controller/xenonController
+--
+_XenonController_
+--
+#array
+--
+async
+ + ping(id)
+ + getOsStatus(id)
+ + getPortStatus(id)
+ + openPort(id)
+ + stopPort(id)
+ + closePort(id)
+bg=#aa8db1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>396</x>
+      <y>770</y>
+      <w>253</w>
+      <h>352</h>
+    </coordinates>
+    <panel_attributes>	/port
+--
+/status
+ - level: port | bus | com
+ - open: Bool
+ - openText :  'Open' | 'Closed'
+ - path: string
+ - baudRate: number
+ - dataBits: number
+ - parity: 'even' | 'odd'
+ - stopBits: number
+--
+/paths      (get)
+/defaults  (get)
+--
+/params:  (get)
+/params:  (post): open Port
+/init
+--
+/open       (get)
+/stop        (get)
+/close       (get)
+halign=left
+bg=#dfe3ee
+fg=#007bff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>2068</x>
+      <y>913</y>
+      <w>297</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>errorData
+--
+ + id: number
+ + ip: string
+ + name: string
+ + source: string
+ + status: string
+ + message: string
+halign=left
+bg=#dfe3ee
+fg=#007bff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1188</x>
+      <y>1683</y>
+      <w>231</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>_Xenon_
+--
+/port
+/data
+/io/status
+/com/status
+/system
+bg=#ff6162</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>825</x>
+      <y>1133</y>
+      <w>231</w>
+      <h>275</h>
+    </coordinates>
+    <panel_attributes>_Xenon_
+--
+/port
+--
+GET
+ + /paths
+ + /defaults
+ + /status
+ + /params
+ + /open
+ + /stop
+ + /close
+ + /vent
+--
+POST
+ + /params
+ + /init
+
+bg=#dfe3ee
+fg=#814648</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>825</x>
+      <y>1452</y>
+      <w>231</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>_Xenon_
+--
+/data
+--
+GET
+ + /device
+ + /datetime
+ + /vent
+ + /alarm
+ + /temporal
+
+
+bg=#dfe3ee
+fg=#814648</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>627</x>
+      <y>1661</y>
+      <w>583</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>510.0;100.0;50.0;100.0;50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>627</x>
+      <y>1782</y>
+      <w>583</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>510.0;10.0;50.0;10.0;50.0;80.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>1309</y>
+      <w>242</w>
+      <h>429</h>
+    </coordinates>
+    <panel_attributes>_VentData_
+--
+msgId: number
+--
+time:
+ + date: YYYY-MM-DD,
+ + time: HH:MM:SS
+--
+episode
+ + uuid
+--
+respiration
+ + peak.value: number
+ + tidalvolume.value: number
+ + minutevolume.value: number
+--
+gas
+ + fio2.value: number
+ + feco2.value: number
+--
+inhalation
+ + desflurane
+   + insp.value: number
+   + exp.value: number
+   + cons: number
+ + sevoflurane
+ + isoflurne
+fg=#677eaa</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>231</x>
+      <y>1320</y>
+      <w>616</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+fg=#7193ff</panel_attributes>
+    <additional_attributes>10.0;10.0;540.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>374</x>
+      <y>1617</y>
+      <w>264</w>
+      <h>143</h>
+    </coordinates>
+    <panel_attributes>	/com/status
+--
+status:
+ + val: int
+ + level: port | bus | com
+ + txt: string
+ + label: string
+halign=left
+bg=#dfe3ee
+fg=#007bff</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>825</x>
+      <y>1969</y>
+      <w>231</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>ComResult&lt;T&gt;
+--
+ + com:  ComStatus
+ + data: T
+halign=left
+bg=#dfe3ee
+fg=#007bff
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>913</x>
+      <y>1859</y>
+      <w>143</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+group=1</panel_attributes>
+    <additional_attributes>10.0;10.0;110.0;10.0;110.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3157</x>
+      <y>2090</y>
+      <w>264</w>
+      <h>242</h>
+    </coordinates>
+    <panel_attributes>/model/database.js
+--
+_MedibusVentGasData: Model__
+--
+msgId:      int,
+device:     bigint,
+episode:   string,
+time:        date,
+fio2:          int,
+feo2:         int,
+o2uptake: int,
+fico2:        int,
+feco2:       int
+bg=#cbe395</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2849</x>
+      <y>2365</y>
+      <w>264</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>/model/database.js
+--
+_MedibusVentRespData: Model__
+--
+msgId:              int,
+device:             bigint,
+episode:           string,
+time:                date,
+compliance:      int,
+peak:                int,
+plateau:            int,
+peep:                int,
+rate:                 int,
+tidalvolume:     int,
+minutevolume: float
+bg=#cbe395</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2849</x>
+      <y>2090</y>
+      <w>264</w>
+      <h>264</h>
+    </coordinates>
+    <panel_attributes>/model/database.js
+--
+_XenonOsStatus: Model__
+--
+ip:                 string
+deviceid:       bigint,
+deviceName: string,
+port:              int,
+interface:      string,
+online:           boolean,
+hostname:     string,
+freemem:      bigint,
+totalmem:     bigint,
+uptime:        double,
+errno:           integer
+bg=#cbe395</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2849</x>
+      <y>1892</y>
+      <w>264</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>/model/database.js
+--
+_Device: Model__
+--
+id             : int, PK
+name       : string,
+ip             : string,
+hostname: string,
+mac         : string
+bg=#cbe395</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>3157</x>
+      <y>2354</y>
+      <w>264</w>
+      <h>242</h>
+    </coordinates>
+    <panel_attributes>/model/database.js
+--
+_MedibusVentInhalData: Model__
+--
+msgId:    int,
+device:   bigint,
+episode:  string,
+time:     date,
+mac:      float,
+inhal:    int,
+gas  :    string,
+insp:     float,
+exsp:     float,
+cons:     float
+bg=#cbe395</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1947</x>
+      <y>1430</y>
+      <w>649</w>
+      <h>704</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>570.0;10.0;490.0;10.0;490.0;620.0;50.0;620.0;50.0;570.0;10.0;570.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1947</x>
+      <y>1452</y>
+      <w>649</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>570.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1947</x>
+      <y>1782</y>
+      <w>165</w>
+      <h>33</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1947</x>
+      <y>1474</y>
+      <w>649</w>
+      <h>671</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>570.0;10.0;500.0;10.0;500.0;590.0;40.0;590.0;40.0;560.0;10.0;560.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2376</x>
+      <y>1496</y>
+      <w>220</w>
+      <h>495</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;120.0;10.0;120.0;430.0;10.0;430.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1408</x>
+      <y>1760</y>
+      <w>704</w>
+      <h>242</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>620.0;200.0;590.0;200.0;590.0;10.0;30.0;10.0;30.0;30.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2376</x>
+      <y>1518</y>
+      <w>220</w>
+      <h>484</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>180.0;10.0;130.0;10.0;130.0;420.0;10.0;420.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1947</x>
+      <y>1408</y>
+      <w>649</w>
+      <h>176</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>570.0;10.0;80.0;10.0;80.0;140.0;10.0;140.0</additional_attributes>
+  </element>
+</diagram>
