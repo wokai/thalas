@@ -182,6 +182,10 @@ pre code {
 <li><a href="#mysql"><span class="toc-section-number">2</span> MySql</a>
 <ul>
 <li><a href="#create-database"><span class="toc-section-number">2.1</span> Create database</a></li>
+<li><a href="#backup-and-restore"><span class="toc-section-number">2.2</span> Backup and restore</a>
+<ul>
+<li><a href="#find-and-replace-with-sed"><span class="toc-section-number">2.2.1</span> Find and replace with sed:</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#snomed-ct"><span class="toc-section-number">3</span> Snomed CT</a></li>
 <li><a href="#chart.js"><span class="toc-section-number">4</span> Chart.js</a>
@@ -253,8 +257,26 @@ pre code {
 <pre class="c"><code>CREATE DATABASE thalas;
 CREATE USER &#39;thalasroot&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;g3Rsa879:n4sqPkxz&#39;;
 GRANT ALL ON thalas.* TO &#39;thalasroot&#39;@&#39;localhost&#39;;</code></pre>
+</div>
+<div id="backup-and-restore" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Backup and restore</h2>
+<ul>
+<li>Backup <code>mysqldump thalas &gt; thalas.sql</code></li>
+<li>Replace <code>sed -i &#39;s/utf8mb4_0900_ai_ci/utf8mb4_general_ci/g&#39; thalas.sql</code></li>
+<li>Restore <code>mysql thalas &lt; thalas.sql</code></li>
+</ul>
+<p>The replace step resolves the <em>Unknown collation issue</em>. It replaces ‘utf8mb4_0900_ai_ci’ with ‘utf8mb4_general_ci’.</p>
+<div id="find-and-replace-with-sed" class="section level3" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Find and replace with sed:</h3>
+<ul>
+<li>Syntax <code>sed -i &#39;s/SEARCH_REGEX/REPLACEMENT/g&#39; input-file.txt</code></li>
+<li>The option <code>-i</code> tells <em>sed</em> to change file in place (instead of writing to standard output)</li>
+<li>The flag <code>s</code> is the substitute command</li>
+<li>The flag <code>g</code> adopts general substitution (not only the first occurrence in a line is replaced)</li>
+</ul>
 <hr />
 <!-- ----------------------------------------------------------------------- -->
+</div>
 </div>
 </div>
 <div id="snomed-ct" class="section level1" number="3">

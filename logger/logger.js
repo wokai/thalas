@@ -69,11 +69,24 @@ const consTransport = new winston.transports.Console({
 
 
 /// //////////////////////////////////////////////////////////////////////// ///
+/// Check and eventually create directory for logfiles
+/// //////////////////////////////////////////////////////////////////////// ///
+
+let logdir = path.join(__dirname, '..', 'logfiles');
+
+if (!fs.existsSync(logdir)){
+  console.log(`[logger.js] Logging directory '${logdir}' does not exist (will be created).`.yellow)
+  fs.mkdirSync(logdir);
+}
+
+
+
+/// //////////////////////////////////////////////////////////////////////// ///
 /// Dayly rotating file log
 /// //////////////////////////////////////////////////////////////////////// ///
 
 const logfile = 'win_' + dateformat(new Date(), 'yyyy-mm-dd') + '.log';
-const logpath = path.join(__dirname, '..', 'logfiles', logfile);
+const logpath = path.join(logdir, logfile);
 
 const flog = fs.createWriteStream(logpath, { flags: 'a' })
 const fileTransport = new winston.transports.Stream({ stream: flog });
