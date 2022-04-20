@@ -28,11 +28,11 @@ const colors  = require('colors');
 
 const router = express.Router();
 
-const { Device, XenonOsStatus, Episode, MedibusVentRespData, MedibusVentGasData, MedibusVentInhalData }   = require(path.join('..', 'model', 'database'));
+const { Device, XenonOsStatus, Episode, MedibusVentRespData, MedibusVentGasData, MedibusVentInhalData } = require(path.join('..', 'model', 'database'));
 
 
 router.get('/', function(request, result, next){
-  Episode.findAll().then(res => {
+  Episode.findAll({ order: [['id', 'DESC' ]] }).then(res => {
     result.status(200).json(res);
   });
 });

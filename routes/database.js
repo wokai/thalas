@@ -44,14 +44,11 @@ router.get('/device',  function(request, result, next){
   });
 });
 
-router.get('/resp/:devid', function(request, result, next) {
+router.get('/resp/:episode', function(request, result, next) {
   MedibusVentRespData.findAll({
     attributes: [ 'time', 'compliance', 'peak', 'plateau', 'peep', 'rate', 'tidalvolume', 'minutevolume'],
     where: {
-      device: request.params.devid,
-      time: {
-        [Op.gt]: new Date(new Date() - 600 * 1000)
-      }
+      episode: request.params.episode
     },
     raw : true
   }).then(res => { result.status(200).json(res); });

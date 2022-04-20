@@ -26,6 +26,8 @@ const crypto = require("crypto");
 
 const config = require(path.join(__dirname, '..', 'config', 'general'));
 
+const win     = require('../logger/logger');
+
 const { Xenon } = require(path.join(__dirname, '..', 'model', 'xenon'));
 
 class XenonController {
@@ -114,6 +116,7 @@ class XenonController {
   }
   
   stopIntervalQuery() {
+    win.def.log({ level: 'info', file: 'xenonController.js', func: 'stopIntervalQuery', message: 'Stop interval'});
     if(this.#intId !== null){
       clearInterval(this.#intId);
       this.#intId = null;
@@ -123,7 +126,7 @@ class XenonController {
   }
   
   startIntervalQuery(time = 4000) {
-    console.log(`xenonController: ${config.interval.time}`);
+    win.def.log({ level: 'info', file: 'xenonController.js', func: 'startIntervalQuery', message: `Interval time: ${config.interval.time}`});
     
     this.stopIntervalQuery();
     this.#intId = setInterval(() => this.queryDevices(), time);
