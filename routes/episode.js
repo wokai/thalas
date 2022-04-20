@@ -31,8 +31,28 @@ const router = express.Router();
 const { Device, XenonOsStatus, Episode, MedibusVentRespData, MedibusVentGasData, MedibusVentInhalData } = require(path.join('..', 'model', 'database'));
 
 
-router.get('/', function(request, result, next){
+router.get('/', function(request, result, next) {
   Episode.findAll({ order: [['id', 'DESC' ]] }).then(res => {
+    result.status(200).json(res);
+  });
+});
+
+
+router.get('/resp', function(request, result, next) {
+  MedibusVentRespData.findAll({
+    attributes: [
+      'id',
+      'msgId',
+      'tidalvolume',
+      're.id',
+      're.begin'
+    ],
+    limit: 5,
+    include: {
+      model: Episode,
+      as: 're'
+    }
+  }).then(res => {
     result.status(200).json(res);
   });
 });

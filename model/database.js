@@ -41,7 +41,8 @@ const sequelize = new Sequelize(
   General.database.password, 
   { 
     dialect: 'mysql',
-    logging: false
+    /// 'Change to false to disable logging
+    logging: console.log
   }
 )
 
@@ -163,6 +164,18 @@ MedibusVentRespData.init({
     modelName: 'mbVentResp',
     freezeTableName: true
 });
+
+
+const Ep = Episode.hasMany(MedibusVentRespData, {
+  foreignKey: 'value'
+});
+
+/// Create foreignKey in MedibusVentRespData
+MedibusVentRespData.belongsTo(Episode, {
+  foreignKey: 'episode',
+  as: 're'
+});
+
 
 
 class MedibusVentGasData extends Model {}
