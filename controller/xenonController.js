@@ -40,6 +40,7 @@ class XenonController {
     this.#array = Xenon.getXenonArray();
     this.#intId = null;
     
+    /// ToDo Eventually save to database or remove this dataset
     this.#interval = {
       id: null,
       start: null,

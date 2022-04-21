@@ -27,6 +27,9 @@ const config = {
   language : {
     locale : 'de-DE'
   },
+  logger: {
+    level: 'info'
+  },
   database: {
     user: 'xxx',
     name: 'thalas',
@@ -101,6 +104,16 @@ try {
   console.log('[config/general] No local-config.js found. Using default values'.brightYellow);
 }
 
+/// //////////////////////////////////////////////////////////////////////// ///
+/// Logger levels
+/// error:   0
+/// warn:    1 
+/// info:    2 (default)
+/// http:    3
+/// verbose: 4 
+/// debug:   5 
+/// silly:   6 
+/// //////////////////////////////////////////////////////////////////////// ///
 
 module.exports = Object.freeze(config);
 

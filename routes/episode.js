@@ -43,14 +43,12 @@ router.get('/resp', function(request, result, next) {
     attributes: [
       'id',
       'msgId',
-      'tidalvolume',
-      're.id',
-      're.begin'
-    ],
+      'tidalvolume'
+      ],
+    order: [['id', 'DESC' ]],
     limit: 5,
     include: {
-      model: Episode,
-      as: 're'
+      model: Episode
     }
   }).then(res => {
     result.status(200).json(res);

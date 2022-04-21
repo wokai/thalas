@@ -42,7 +42,7 @@ const sequelize = new Sequelize(
   { 
     dialect: 'mysql',
     /// 'Change to false to disable logging
-    logging: console.log
+    logging: false ///console.log
   }
 )
 
@@ -148,8 +148,8 @@ Episode.init({
 class MedibusVentRespData extends Model {}
 MedibusVentRespData.init({
     msgId:        DataTypes.INTEGER,
-    device:       DataTypes.BIGINT,
-    episode:      DataTypes.STRING,
+    deviceId:     DataTypes.BIGINT,
+    episodeId:    DataTypes.INTEGER,
     time:         DataTypes.DATE,
     compliance:   DataTypes.INTEGER,
     peak:         DataTypes.INTEGER,
@@ -160,29 +160,21 @@ MedibusVentRespData.init({
     minutevolume: DataTypes.FLOAT
   }, {
     sequelize,
-    indexes: [ { fields: [ 'episode' ] } ], 
     modelName: 'mbVentResp',
     freezeTableName: true
 });
 
 
-const Ep = Episode.hasMany(MedibusVentRespData, {
-  foreignKey: 'value'
-});
-
-/// Create foreignKey in MedibusVentRespData
-MedibusVentRespData.belongsTo(Episode, {
-  foreignKey: 'episode',
-  as: 're'
-});
+const Ep = Episode.hasMany(MedibusVentRespData);
+MedibusVentRespData.belongsTo(Episode);
 
 
 
 class MedibusVentGasData extends Model {}
 MedibusVentGasData.init({
     msgId:        DataTypes.INTEGER,
-    device:       DataTypes.BIGINT,
-    episode:      DataTypes.STRING,
+    deviceId:       DataTypes.BIGINT,
+    episodeId:    DataTypes.BIGINT,
     time:         DataTypes.DATE,
     fio2:     DataTypes.INTEGER,
     feo2:     DataTypes.INTEGER,
@@ -191,7 +183,7 @@ MedibusVentGasData.init({
     feco2:    DataTypes.INTEGER
   }, {
   sequelize,
-  indexes: [ { fields: [ 'episode' ] } ], 
+  indexes: [ { fields: [ 'episodeId' ] } ], 
   modelName: 'mbVentGas',
   freezeTableName: true
 });
@@ -199,19 +191,19 @@ MedibusVentGasData.init({
 
 class MedibusVentInhalData extends Model {}
 MedibusVentInhalData.init({
-  msgId:    DataTypes.INTEGER,
-  device:   DataTypes.BIGINT,
-  episode:  DataTypes.STRING,
-  time:     DataTypes.DATE,
-  mac:      DataTypes.FLOAT,
-  inhal:    DataTypes.INTEGER,  /// Encoded gas type: General.inhalation (array)
-  gas  :    DataTypes.STRING,
-  insp:     DataTypes.FLOAT,
-  exsp:     DataTypes.FLOAT,
-  cons:     DataTypes.FLOAT
+  msgId:      DataTypes.INTEGER,
+  deviceId:     DataTypes.BIGINT,
+  episodeId:  DataTypes.BIGINT,
+  time:       DataTypes.DATE,
+  mac:        DataTypes.FLOAT,
+  inhal:      DataTypes.INTEGER,  /// Encoded gas type: General.inhalation (array)
+  gas  :      DataTypes.STRING,
+  insp:       DataTypes.FLOAT,
+  exsp:       DataTypes.FLOAT,
+  cons:       DataTypes.FLOAT
   }, {
   sequelize,
-  indexes: [ { fields: [ 'episode' ] } ], 
+  indexes: [ { fields: [ 'episodeId' ] } ], 
   modelName: 'mbVentInhal',
   freezeTableName: true
 });
@@ -339,11 +331,11 @@ class MbDbInput {
     }
   }
 
-  static async saveMedibusVentRespData(data, devid) {
+  static async saveMedibusVentRespData(data, devId, episodeId) {
     return MedibusVentRespData.build({
       msgId:        data.msgId,
-      device:       devid,
-      episode:      data.episode,
+      deviceId:       devId,
+      episodeId:    episodeId,
       time:         data.time,
       compliance:   data.patient.compliance,
       peak:         data.respiration.peak,
@@ -356,33 +348,33 @@ class MbDbInput {
 
   }
 
-  static async saveMedibusVentGasData(data, devid) {
+  static async saveMedibusVentGasData(data, devId, episodeId) {
     return MedibusVentGasData.build({
-        msgId:    data.msgId,
-        device:   devid,
-        episode:  data.episode,
-        time:     data.time,
-        fio2:     data.gas.fio2,
-        feo2:     data.gas.feo2,
-        o2uptake: data.gas.o2uptake,
-        fico2:    data.gas.fico2,
-        feco2:    data.gas.feco2
+        msgId:      data.msgId,
+        deviceId:     devId,
+        episodeId:  episodeId,
+        time:       data.time,
+        fio2:       data.gas.fio2,
+        feo2:       data.gas.feo2,
+        o2uptake:   data.gas.o2uptake,
+        fico2:      data.gas.fico2,
+        feco2:      data.gas.feco2
       }).save();
   }
   
-  static async saveMedibusVentInhalData(data, devid) {
+  static async saveMedibusVentInhalData(data, devId, episodeId) {
     let inhal = MbDbInput.reformatInhalData(data.inhalation);
     return MedibusVentInhalData.build({
-      msgId:    data.msgId,
-      device:   devid,
-      episode:  data.episode,
-      time:     data.time,
-      mac:      data.inhalation.mac,
-      inhal:    inhal.i,  /// Encoded gas type: General.inhalation (array)
-      gas  :    inhal.gas,
-      insp:     inhal.insp,
-      exsp:     inhal.exsp,
-      cons:     inhal.cons
+      msgId:      data.msgId,
+      deviceId:     devId,
+      episodeId:  episodeId,
+      time:       data.time,
+      mac:        data.inhalation.mac,
+      inhal:      inhal.i,  /// Encoded gas type: General.inhalation (array)
+      gas  :      inhal.gas,
+      insp:       inhal.insp,
+      exsp:       inhal.exsp,
+      cons:       inhal.cons
     }).save();
   }
   

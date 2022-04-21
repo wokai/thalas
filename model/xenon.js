@@ -70,6 +70,8 @@ class Xenon extends Device {
       end:    null
     })
     await this.#episode.save();
+    console.log(`[model/Xenon] initEpisode Id: ${this.#episode.id}`.green);
+    win.def.log({ level: 'info', file: 'xenon.js', func: 'initEpisode', message: `EpisodeId: ${this.#episode.id}`});
     return this.#episode;
   }
   
@@ -78,6 +80,7 @@ class Xenon extends Device {
     if(this.#episode !== null) {
       this.#episode.end = end;
       await this.#episode.save();
+      win.def.log({ level: 'info', file: 'xenon.js', func: 'endEpisode', message: `EpisodeId: ${this.#episode.id}`});
       this.#episode = null;
     }
   }
@@ -156,14 +159,20 @@ class Xenon extends Device {
     });
   }
   
+  
+  /// ToDo: Eventually init Episode when interval is started without openPort
   async getVentData() {
     return this.getClientRoute('/data/vent')
       .then(async res => {
         if(res.data !== null ) { 
           this.#lastMsg = res.data.msgId;
-          await MbDbInput.saveMedibusVentRespData(res.data, this.id);
-          await MbDbInput.saveMedibusVentGasData(res.data, this.id);
-          await MbDbInput.saveMedibusVentInhalData(res.data, this.id);
+          try{
+            await MbDbInput.saveMedibusVentRespData(res.data, this.id, this.#episode.id);
+            await MbDbInput.saveMedibusVentGasData(res.data, this.id, this.#episode.id);
+            await MbDbInput.saveMedibusVentInhalData(res.data, this.id, this.#episode.id);
+          } catch (error) {
+            win.def.log({ level: 'error', file: 'xenon.js', func: 'getVentData', message: error });
+          }
           return res;
         } else {
           return res;

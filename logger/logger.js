@@ -25,6 +25,7 @@ const dateformat = require("dateformat");
 const winston = require('winston');
 const { format } = winston;
 const { combine, label, json } = format;
+const General = require('../config/general');
 
 const fs = require('fs');
 const path = require('path');
@@ -106,7 +107,7 @@ const def = winston.createLogger({
   /** See app.js : uncaughtException
   exceptionHandlers: [ redisTransport ],
   **/
-  level: 'info',  /// Default: info
+  level: General.logger.level,  /// Default: info
   exitOnError: false
 });
 
