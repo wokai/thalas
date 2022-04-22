@@ -135,7 +135,7 @@ class Xenon extends Device {
   }
   
   async openPort() {
-    win.def.log({ level: 'verbose', file: 'xenon.js', func: 'openPort', message: 'openPort'});
+    win.def.log({ level: 'verbose', file: 'xenon.js', func: 'openPort', message: ''});
     return this.getClientRoute('/port/open')
       .then(async status => {
         await this.initEpisode(status.data.episode)
@@ -145,6 +145,7 @@ class Xenon extends Device {
   
   /// Regular shutdown which also closes port
   async stopPort() {
+    win.def.log({ level: 'verbose', file: 'xenon.js', func: 'stopPort', message: ''});
     return this.getClientRoute('/port/stop').then(async status => {
       await this.endEpisode(status.data.episode.end)
       return status;

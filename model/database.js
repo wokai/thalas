@@ -164,7 +164,6 @@ MedibusVentRespData.init({
     freezeTableName: true
 });
 
-
 const Ep = Episode.hasMany(MedibusVentRespData);
 MedibusVentRespData.belongsTo(Episode);
 
@@ -172,15 +171,15 @@ MedibusVentRespData.belongsTo(Episode);
 
 class MedibusVentGasData extends Model {}
 MedibusVentGasData.init({
-    msgId:        DataTypes.INTEGER,
-    deviceId:       DataTypes.BIGINT,
-    episodeId:    DataTypes.BIGINT,
-    time:         DataTypes.DATE,
-    fio2:     DataTypes.INTEGER,
-    feo2:     DataTypes.INTEGER,
-    o2uptake: DataTypes.INTEGER,
-    fico2:    DataTypes.INTEGER,
-    feco2:    DataTypes.INTEGER
+    msgId:      DataTypes.INTEGER,
+    deviceId:   DataTypes.BIGINT,
+    episodeId:  DataTypes.BIGINT,
+    time:       DataTypes.DATE,
+    fio2:       DataTypes.INTEGER,
+    feo2:       DataTypes.INTEGER,
+    o2uptake:   DataTypes.INTEGER,
+    fico2:      DataTypes.INTEGER,
+    feco2:      DataTypes.INTEGER
   }, {
   sequelize,
   indexes: [ { fields: [ 'episodeId' ] } ], 
@@ -192,7 +191,7 @@ MedibusVentGasData.init({
 class MedibusVentInhalData extends Model {}
 MedibusVentInhalData.init({
   msgId:      DataTypes.INTEGER,
-  deviceId:     DataTypes.BIGINT,
+  deviceId:   DataTypes.BIGINT,
   episodeId:  DataTypes.BIGINT,
   time:       DataTypes.DATE,
   mac:        DataTypes.FLOAT,
