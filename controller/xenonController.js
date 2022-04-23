@@ -27,7 +27,7 @@ const crypto = require("crypto");
 const config    = require(path.join(__dirname, '..', 'config', 'general'));
 const win       = require('../logger/logger');
 const { Xenon } = require(path.join(__dirname, '..', 'model', 'xenon'));
-const { Interval } = require(path.join(__dirname, '..', 'database', 'database'));
+const { Interval } = require(path.join(__dirname, '..', 'model', 'database'));
 
 
 class XenonController {
@@ -130,10 +130,11 @@ class XenonController {
     this.stopIntervalQuery();
     this.#intId = setInterval(() => this.queryDevices(), time);
     
+    /// Init interval object 
     this.#interval = Interval.build({
-      rbid = crypto.randomBytes(16).toString("hex");
-      begin = new Date();
-      cycles = 0;
+      rbid: crypto.randomBytes(16).toString("hex"),
+      begin: new Date(),
+      cycles: 0
     });
     await this.#interval.save();
     win.def.log({ level: 'info', file: 'xenonController.js', func: 'startIntervalQuery', message: `Interval id: ${this.#interval.id}`});    
