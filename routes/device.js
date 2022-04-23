@@ -103,17 +103,23 @@ router.get('/port/vent/:devid', function(request, result, next) {
 /// ------------------------------------------------------------------------ ///
 
 router.get('/interval/start', function(request, result, next) {
-  let res = controller.startIntervalQuery();
-  result.status(200).json(res);
+  controller.startIntervalQuery()
+    .then((res) => { next('/interval/status'); });
 });
 
 router.get('/interval/stop', function(request, result, next) {
-  let res = controller.stopIntervalQuery();
-  result.status(200).json(res);
+  controller.stopIntervalQuery()
+    .then((res) => { next('/interval/status'); });
 });
 
 router.get('/interval/status', function(request, result, next) {
-  result.status(200).json(controller.interval);
+  let res = controller.interval;
+  result.status(200).json({
+    id: res.id,
+    begin: res.begin,
+    end: res.end,
+    cycles: res.cycles
+  });
 });
 
 /// //////////////////////////////////////////////////////////////////////// ///

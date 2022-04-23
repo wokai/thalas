@@ -130,15 +130,30 @@ DeviceConnection.init({
 
 class Episode extends Model {}
 Episode.init({
-  device: DataTypes.BIGINT,   /// Device id (from ip)
-  value:  DataTypes.STRING,
-  begin:  DataTypes.DATE,     /// ISO format
-  end:    DataTypes.DATE
+  deviceid: DataTypes.BIGINT,
+  device:   DataTypes.BIGINT,   /// Device id (from ip)
+  value:    DataTypes.STRING,
+  begin:    DataTypes.DATE,     /// ISO format
+  end:      DataTypes.DATE
 }, {
   sequelize,
   modelName: 'episode',
   freezeTableName: true
 });
+
+class Interval extends Model {}
+Interval.init({
+  rbid:     DataTypes.STRING,   /// Random-bytes id
+  begin:    DataTypes.DATE,
+  end:      DataTypes.DATE,
+  cycles:   DataTypes.INTEGER
+}, {
+  sequelize,
+  modelName: 'interval',
+  freezeTableName: true
+});
+
+
 
 
 /// ------------------------------------------------------------------------ ///
@@ -387,6 +402,7 @@ module.exports = {
   XenonPortStatus,
   DeviceConnection,
   Episode,
+  Interval,
   MedibusVentRespData,
   MedibusVentGasData,
   MedibusVentInhalData,

@@ -24,11 +24,11 @@ const path   = require('path');
 const colors = require('colors');
 const crypto = require("crypto");
 
-const config = require(path.join(__dirname, '..', 'config', 'general'));
-
-const win     = require('../logger/logger');
-
+const config    = require(path.join(__dirname, '..', 'config', 'general'));
+const win       = require('../logger/logger');
 const { Xenon } = require(path.join(__dirname, '..', 'model', 'xenon'));
+const { Interval } = require(path.join(__dirname, '..', 'database', 'database'));
+
 
 class XenonController {
   
@@ -50,7 +50,6 @@ class XenonController {
   }
   
   get interval() { return this.#interval; }
-  
   
   /// ////////////////////////////////////////////////////////////////////// ///
   /// Ensure that the following commands are only executed on known 
@@ -116,27 +115,28 @@ class XenonController {
     return Promise.all(this.#array.map(x => x.queryVentData()))
   }
   
-  stopIntervalQuery() {
+  async stopIntervalQuery() {
     win.def.log({ level: 'info', file: 'xenonController.js', func: 'stopIntervalQuery', message: 'Stop interval'});
     if(this.#intId !== null){
       clearInterval(this.#intId);
       this.#intId = null;
-      this.#interval.stop = new Date().toISOString();
+      this.#interval.end = new Date().toISOString();
+      await this.#interval.save();
     }
-    return this.#interval;
+    return Promise.resolve(this.#interval);
   }
   
-  startIntervalQuery(time = 4000) {
-    win.def.log({ level: 'info', file: 'xenonController.js', func: 'startIntervalQuery', message: `Interval time: ${config.interval.time}`});
-    
+  async startIntervalQuery(time = 4000) {    
     this.stopIntervalQuery();
     this.#intId = setInterval(() => this.queryDevices(), time);
     
-    this.#interval.id = crypto.randomBytes(16).toString("hex");
-    this.#interval.start = new Date().toISOString();
-    this.#interval.stop = null;
-    this.#interval.cycles = 0;
-    
+    this.#interval = Interval.build({
+      rbid = crypto.randomBytes(16).toString("hex");
+      begin = new Date();
+      cycles = 0;
+    });
+    await this.#interval.save();
+    win.def.log({ level: 'info', file: 'xenonController.js', func: 'startIntervalQuery', message: `Interval id: ${this.#interval.id}`});    
     return this.#interval;
   }
 }
