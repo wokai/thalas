@@ -48,7 +48,8 @@ router.get('/resp', function(request, result, next) {
     order: [['id', 'DESC' ]],
     limit: 5,
     include: {
-      model: Episode
+      model: Episode,
+      attributes: ['begin', 'end' ]
     }
   }).then(res => {
     result.status(200).json(res);
@@ -58,10 +59,14 @@ router.get('/resp', function(request, result, next) {
 router.get('/count/resp', function(request, result, next){
   MedibusVentRespData.findAll({
     attributes: [
-      'episode',
-      [Sequelize.fn('count', Sequelize.col('id')), 'cnt']
+      'episodeId',
+      [Sequelize.fn('count', Sequelize.col('episodeId')), 'cnt']
     ],
-    group: ['episode']
+    group: ['episodeId'],
+    include: {
+      model: Episode,
+      attributes: ['begin', 'end' ]
+    }
   }).then(res => {
     result.status(200).json(res);
   });
