@@ -77,7 +77,7 @@ app.use('/db',      db_router);
 /// ////////////////////////////////////////////////////////////////////////////
 app.use((err, req, res, next) => {
   /// Eventually log errors here ... ?
-  console.log('[app.js] Error caught: %s'.brightRed, err.stack);
+  console.log('[app.js] Error caught: %s'.brightRed, err);
   res.status(500).send(err.stack);
 });
 

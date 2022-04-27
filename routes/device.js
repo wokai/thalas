@@ -28,8 +28,9 @@ const fs      = require('fs');
 
 const Model   = require(path.join('..', 'model', 'parameters'));
 const General = require(path.join('..', 'config', 'general'));
+const win     = require(path.join('..', 'logger', 'logger'));
 
-const { Device }     = require(path.join('..', 'model', 'device'));
+const { Device }      = require(path.join('..', 'model', 'device'));
 const { controller }  = require(path.join(__dirname, '..', 'controller', 'xenonController'));
 
 const router = express.Router();
@@ -102,24 +103,28 @@ router.get('/port/vent/:devid', function(request, result, next) {
 /// Interval data is not written into the database
 /// ------------------------------------------------------------------------ ///
 
+function intervalResult(result){
+  result.status(200).json({
+    id    : controller.interval.id,
+    begin : controller.interval.begin,
+    end   : controller.interval.end,
+    cycles: controller.interval.cycles
+  });
+}
+
+
 router.get('/interval/start', function(request, result, next) {
   controller.startIntervalQuery()
-    .then((res) => { next('/interval/status'); });
+    .then((res) => { intervalResult(result); });
 });
 
 router.get('/interval/stop', function(request, result, next) {
   controller.stopIntervalQuery()
-    .then((res) => { next('/interval/status'); });
+    .then((res) => { intervalResult(result) });
 });
 
 router.get('/interval/status', function(request, result, next) {
-  let res = controller.interval;
-  result.status(200).json({
-    id: res.id,
-    begin: res.begin,
-    end: res.end,
-    cycles: res.cycles
-  });
+ intervalResult(result);
 });
 
 /// //////////////////////////////////////////////////////////////////////// ///

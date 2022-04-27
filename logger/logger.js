@@ -114,7 +114,8 @@ const def = winston.createLogger({
 });
 
 
-
+/// Usage:
+/// def.log({ level: 'info', file: 'File_name.js', func: 'Function name', message: `Log Message`});
 
 module.exports = {
   def : def

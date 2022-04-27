@@ -64,6 +64,7 @@ class Xenon extends Device {
   
   async initEpisode(episode) {
     this.#episode = Episode.build({
+      deviceid: this.id,
       device: this.id,
       value:  episode.uuid,
       begin:  episode.begin, /// ISO format
@@ -163,6 +164,9 @@ class Xenon extends Device {
   
   /// ToDo: Eventually init Episode when interval is started without openPort
   async getVentData() {
+    if(this.#episode == null) {
+      await this.openPort();
+    }
     return this.getClientRoute('/data/vent')
       .then(async res => {
         if(res.data !== null ) { 
