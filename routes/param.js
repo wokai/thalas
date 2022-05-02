@@ -28,6 +28,7 @@ const router = express.Router();
 
 
 /// Get complete list of all parameters
+/// http://localhost:4040/param/
 router.get('/',  function(request, result, next){
   result.status(200).json(Model.parameters.array);
 });

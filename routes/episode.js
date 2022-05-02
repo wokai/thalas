@@ -56,11 +56,12 @@ router.get('/resp', function(request, result, next) {
   });
 });
 
+/// http://localhost:4040/db/episode/count/resp
 router.get('/count/resp', function(request, result, next){
   MedibusVentRespData.findAll({
     attributes: [
       'episodeId',
-      [Sequelize.fn('count', Sequelize.col('episodeId')), 'cnt']
+      [Sequelize.fn('count', Sequelize.col('episodeId')), 'respcount']
     ],
     group: ['episodeId'],
     include: {
