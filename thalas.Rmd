@@ -142,6 +142,8 @@ It replaces 'utf8mb4_0900_ai_ci' with 'utf8mb4_general_ci'.
 ### Add Column
 
  - `ALTER TABLE episode ADD COLUMN deviceid BIGINT;`
+ - `ALTER TABLE device ADD COLUMN port INTEGER;`
+ - `UPDATE device SET port = 4000;`
 
 --------------------------------------------------------------------------------
 

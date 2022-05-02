@@ -64,7 +64,17 @@ const config = {
     {
       name: 'Localhost',
       ip: '127.0.0.1',        /// 2130706433
-      port: '4000'
+      port: 4000
+    },
+    {
+      name: 'Zeus',
+      ip: '192.168.178.22',
+      port: 4000
+    },
+    {
+      name: 'Unknown',
+      ip: '240.0.0.0',
+      port: 4000
     }
   ],
   inhalation: [

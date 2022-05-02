@@ -62,6 +62,7 @@ Device.init({
   },
   name:     DataTypes.STRING,
   ip:       DataTypes.STRING,
+  port:     DataTypes.INTEGER,
   hostname: DataTypes.STRING,
   mac:      DataTypes.STRING
 }, {
