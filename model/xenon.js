@@ -162,7 +162,10 @@ class Xenon extends Device {
   }
   
   
+  /// ====================================================================== ///
+  /// Requests Ventilation data from Xenon-Device and saves data to database
   /// ToDo: Eventually init Episode when interval is started without openPort
+  /// ====================================================================== ///
   async getVentData() {
     if(this.#episode == null) {
       await this.openPort();

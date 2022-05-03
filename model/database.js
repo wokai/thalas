@@ -131,8 +131,7 @@ DeviceConnection.init({
 
 class Episode extends Model {}
 Episode.init({
-  deviceid: DataTypes.BIGINT,
-  device:   DataTypes.BIGINT,   /// Device id (from ip)
+  deviceid: DataTypes.BIGINT,   /// Device id (from ip)
   value:    DataTypes.STRING,
   begin:    DataTypes.DATE,     /// ISO format
   end:      DataTypes.DATE
