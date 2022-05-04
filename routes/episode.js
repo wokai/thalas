@@ -57,6 +57,7 @@ router.get('/resp', function(request, result, next) {
 });
 
 /// http://localhost:4040/db/episode/count/resp
+/// curl http://localhost:4040/db/episode/count/resp
 router.get('/count/resp', function(request, result, next){
   MedibusVentRespData.findAll({
     attributes: [
@@ -67,9 +68,18 @@ router.get('/count/resp', function(request, result, next){
     include: {
       model: Episode,
       attributes: ['begin', 'end' ]
-    }
+    },
+    raw: true /// Query returns simple object array
   }).then(res => {
-    result.status(200).json(res);
+    console.log(`[routes/episode] /count/resp [0]`, res[0]);
+    result.status(200).json(res.map(e => { 
+      return {
+        id: e.episodeId,
+        count: e.respcount,
+        begin: e['episode.begin'],
+        end: e['episode.end']
+      }
+    }));
   });
 });
 
