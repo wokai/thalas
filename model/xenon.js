@@ -65,7 +65,6 @@ class Xenon extends Device {
   async initEpisode(episode) {
     this.#episode = Episode.build({
       deviceid: this.id,
-      device: this.id,
       value:  episode.uuid,
       begin:  episode.begin, /// ISO format
       end:    null
