@@ -1225,7 +1225,7 @@ bg=#aa8db1</panel_attributes>
       <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-
-call</panel_attributes>
+call sets #com status</panel_attributes>
     <additional_attributes>70.0;90.0;10.0;90.0;10.0;120.0;430.0;120.0;430.0;10.0;460.0;10.0</additional_attributes>
   </element>
   <element>
