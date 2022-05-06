@@ -67,14 +67,16 @@ router.get('/count/resp', function(request, result, next){
     group: ['episodeId'],
     include: {
       model: Episode,
-      attributes: ['begin', 'end' ]
+      attributes: [ 'id', 'deviceid', 'value', 'begin', 'end' ]
     },
     raw: true /// Query returns simple object array
   }).then(res => {
-    console.log(`[routes/episode] /count/resp [0]`, res[0]);
-    result.status(200).json(res.map(e => { 
+    console.log('[routes/episode] get /count/resp ', res[0]);
+    result.status(200).json(res.map(e => {
       return {
         id: e.episodeId,
+        deviceid: e['episode.deviceid'],
+        value: e['episode.value'],
         count: e.respcount,
         begin: e['episode.begin'],
         end: e['episode.end']
