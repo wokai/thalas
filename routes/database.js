@@ -48,7 +48,7 @@ router.get('/resp/:episode', function(request, result, next) {
   MedibusVentRespData.findAll({
     attributes: [ 'time', 'compliance', 'peak', 'plateau', 'peep', 'rate', 'tidalvolume', 'minutevolume'],
     where: {
-      episode: request.params.episode
+      episodeId: request.params.episode
     },
     raw : true
   }).then(res => { result.status(200).json(res); });
@@ -58,7 +58,7 @@ router.get('/gas/:episode', function(request, result, next) {
   MedibusVentGasData.findAll({
     attributes: [ 'time', 'fio2', 'feo2', 'o2uptake', 'fico2', 'feco2' ],
     where: {
-      episode: request.params.episode,
+      episodeId: request.params.episode,
       time: {
         [Op.gt]: new Date(new Date() - 600 * 1000)
       }
@@ -72,7 +72,7 @@ router.get('/inhal/:episode', function(request, result, next) {
   MedibusVentInhalData.findAll({
     attributes: [ 'time', 'mac', 'gas', 'insp', 'exsp', 'cons' ],
     where: {
-      episode: request.params.episode,
+      episodeId: request.params.episode,
       time: {
         [Op.gt]: new Date(new Date() - 600 * 1000)
       }
