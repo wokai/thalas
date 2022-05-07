@@ -71,7 +71,6 @@ router.get('/count/resp', function(request, result, next){
     },
     raw: true /// Query returns simple object array
   }).then(res => {
-    console.log('[routes/episode] get /count/resp ', res[0]);
     result.status(200).json(res.map(e => {
       return {
         id: e.episodeId,
