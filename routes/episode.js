@@ -59,12 +59,14 @@ router.get('/resp', function(request, result, next) {
 /// http://localhost:4040/db/episode/count/resp
 /// curl http://localhost:4040/db/episode/count/resp
 router.get('/count/resp', function(request, result, next){
+
   MedibusVentRespData.findAll({
     attributes: [
       'episodeId',
       [Sequelize.fn('count', Sequelize.col('episodeId')), 'respcount']
     ],
     group: ['episodeId'],
+    order: [['episodeId', 'DESC' ]],
     include: {
       model: Episode,
       attributes: [ 'id', 'deviceid', 'value', 'begin', 'end' ]
@@ -72,15 +74,16 @@ router.get('/count/resp', function(request, result, next){
     raw: true /// Query returns simple object array
   }).then(res => {
     result.status(200).json(res.map(e => {
-      return {
-        id: e.episodeId,
-        deviceid: e['episode.deviceid'],
-        value: e['episode.value'],
-        count: e.respcount,
-        begin: e['episode.begin'],
-        end: e['episode.end']
-      }
-    }));
+        return {
+          id: e.episodeId,
+          deviceid: e['episode.deviceid'],
+          value: e['episode.value'],
+          count: e.respcount,
+          begin: e['episode.begin'],
+          end: e['episode.end']
+        }
+      })
+    );
   });
 });
 
