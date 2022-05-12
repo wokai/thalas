@@ -87,5 +87,20 @@ router.get('/count/resp', function(request, result, next){
   });
 });
 
+router.get('/update/end/:id/:date', function(request, result, next){
+  
+  const id = parseInt(request.params.id);
+  const end = new Date(request.params.date);
+  
+  if(isNaN(parsed) | isNaN(end.getTime())) {
+    result.status(400).json({ error: 'Invalid parameters' });
+  }
+
+  Episode.create({ id: id }).set({ end: end }).save()
+    .then(res => {
+      result.status(200).json(res);
+    })
+});
+
 
 module.exports = router;
