@@ -87,7 +87,7 @@ router.get('/count/resp', function(request, result, next){
   });
 });
 
-router.get('/update/end/:id/:date', function(request, result, next){
+router.get('/update/time/:id/:date', function(request, result, next){
   
   const id = parseInt(request.params.id);
   const end = new Date(request.params.date);
@@ -103,17 +103,34 @@ router.get('/update/end/:id/:date', function(request, result, next){
 });
 
 
-router.post('/update/end', function(request, result, next){
+router.post('/update/time', function(request, result, next){
   //request.body
   console.log(request.body);
   result.status(200).json(request.body);
 })
 
 
-router.put('/update/end', function(request, result, next){
-  //request.body
-  console.log(request.body);
-  result.status(200).json(request.body);
+router.put('/update/time', function(request, result, next){
+  
+  const begin = new Date(request.body.begin);
+  const end = new Date(request.body.end);
+  
+  /// Return error
+  if((typeof value !== 'number') | isNaN(begin.getTime()) | isNaN(end.getTime())){
+    result.status(400).json(0);
+    return;
+  }
+  
+  Episode.update({
+    begin: new Date(request.body.begin),
+    end: new Date(request.body.end)
+  }, {
+    where: { id: request.body.id }
+  })
+  .then(res => {
+    /// res = [ 1 ] on success
+    result.status(200).json(res[0]);
+  })
 })
 
 module.exports = router;
