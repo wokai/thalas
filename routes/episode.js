@@ -38,7 +38,7 @@ router.get('/', function(request, result, next) {
 });
 
 
-router.get('/resp', function(request, result, next) {
+router.get('/resp/tv', function(request, result, next) {
   MedibusVentRespData.findAll({
     attributes: [
       'id',
@@ -56,8 +56,12 @@ router.get('/resp', function(request, result, next) {
   });
 });
 
+
+/// //////////////////////////////////////////////////////////////////////// ///
+/// Query:
 /// http://localhost:4040/db/episode/count/resp
 /// curl http://localhost:4040/db/episode/count/resp
+/// //////////////////////////////////////////////////////////////////////// ///
 router.get('/count/resp', function(request, result, next){
 
   MedibusVentRespData.findAll({
@@ -87,27 +91,38 @@ router.get('/count/resp', function(request, result, next){
   });
 });
 
-router.get('/update/time/:id/:date', function(request, result, next){
-  
-  const id = parseInt(request.params.id);
-  const end = new Date(request.params.date);
-  
-  if(isNaN(parsed) | isNaN(end.getTime())) {
-    result.status(400).json({ error: 'Invalid parameters' });
-  }
+router.get('/resp', function(request, result, next){
 
-  Episode.create({ id: id }).set({ end: end }).save()
-    .then(res => {
-      result.status(200).json(res);
-    })
+  MedibusVentRespData.findAll({
+    attributes: [
+      'episodeId',
+      [Sequelize.fn('count', Sequelize.col('episodeId')), 'respcount'],
+      [Sequelize.fn('max',   Sequelize.col('time')), 'respbegin'     ],
+      [Sequelize.fn('min',   Sequelize.col('time')), 'respend'       ]
+    ],
+    group: ['episodeId'],
+    order: [['episodeId', 'DESC' ]],
+    include: {
+      model: Episode,
+      attributes: [ 'id', 'deviceid', 'value', 'begin', 'end' ]
+    },
+    raw: true /// Query returns simple object array
+  }).then(res => {
+    result.status(200).json(res.map(e => {
+        return {
+          eid: e.episodeId,
+          edeviceid: e['episode.deviceid'],
+          evalue: e['episode.value'],
+          ebegin: e['episode.begin'],
+          eend: e['episode.end'],
+          rcount: e.respcount,
+          rbegin: e.respbegin,
+          rend: e.respend
+        }
+      })
+    );
+  });
 });
-
-
-router.post('/update/time', function(request, result, next){
-  //request.body
-  console.log(request.body);
-  result.status(200).json(request.body);
-})
 
 
 router.put('/update/time', function(request, result, next){
