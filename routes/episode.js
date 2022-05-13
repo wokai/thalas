@@ -103,4 +103,17 @@ router.get('/update/end/:id/:date', function(request, result, next){
 });
 
 
+router.post('/update/end', function(request, result, next){
+  //request.body
+  console.log(request.body);
+  result.status(200).json(request.body);
+})
+
+
+router.put('/update/end', function(request, result, next){
+  //request.body
+  console.log(request.body);
+  result.status(200).json(request.body);
+})
+
 module.exports = router;
