@@ -116,7 +116,21 @@ class Xenon extends Device {
   
   async getPortStatus(){
     return this.getClientRoute('/port/status')
-      .then(async res => { 
+      .then(async res => {
+        
+        /// There has been no response
+        if(!res.data) {
+          res.data = {
+            open: false,
+            openText: 'No device present',
+            path: null,
+            baudRate: null,
+            dataBits: null,
+            parity: null,
+            stopBits: null
+          }
+        }
+        
         await XenonPortStatus.build({
           ip:         this.ip,
           deviceid:   this.id,
