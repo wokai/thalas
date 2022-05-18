@@ -414,43 +414,8 @@ fg=#007bff</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>272</x>
-      <y>1328</y>
-      <w>192</w>
-      <h>280</h>
-    </coordinates>
-    <panel_attributes>	/system
---
-+ interface: string
-+ arch: string
-+ cpus: [
-   + model
-   + speed
-   + times
-  ]
-+ endianess: string
-+ eol: string
-+ freemem: number
-+ hostname: string
-+ networkInterfaces [
-     lo:
-     wlp64s0: [
-   	    0: {
-   	       address: string,
-   	       mac: string
-   	    }
-      ]
-    ]
-halign=left
-bg=#dfe3ee
-fg=#007bff</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>1208</x>
-      <y>680</y>
+      <x>1504</x>
+      <y>808</y>
       <w>216</w>
       <h>88</h>
     </coordinates>
@@ -567,7 +532,7 @@ bg=#aa8db1</panel_attributes>
     </coordinates>
     <panel_attributes>/model/xenon
 --
-_Xenon_
+_Xenon_ (extends Device)
 --
 #port
 --
@@ -717,6 +682,7 @@ fg=#007bff</panel_attributes>
       <h>104</h>
     </coordinates>
     <panel_attributes>_Xenon_
+(Xenon-device)
 --
 /port
 /data
@@ -788,21 +754,21 @@ fg=#814648</panel_attributes>
       <x>456</x>
       <y>1208</y>
       <w>424</w>
-      <h>96</h>
+      <h>104</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>510.0;100.0;50.0;100.0;50.0;10.0;10.0;10.0</additional_attributes>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>510.0;110.0;50.0;110.0;50.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>456</x>
-      <y>1296</y>
+      <y>1304</y>
       <w>424</w>
-      <h>80</h>
+      <h>72</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>510.0;10.0;50.0;10.0;50.0;80.0;10.0;80.0</additional_attributes>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>510.0;10.0;50.0;10.0;50.0;70.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -854,26 +820,6 @@ fg=#677eaa</panel_attributes>
     <panel_attributes>lt=&lt;-
 fg=#7193ff</panel_attributes>
     <additional_attributes>10.0;10.0;70.0;10.0;70.0;240.0;540.0;240.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLPackage</id>
-    <coordinates>
-      <x>272</x>
-      <y>1176</y>
-      <w>192</w>
-      <h>104</h>
-    </coordinates>
-    <panel_attributes>	/com/status
---
-status:
- + val: int
- + level: port | bus | com
- + txt: string
- + label: string
-halign=left
-bg=#dfe3ee
-fg=#007bff</panel_attributes>
-    <additional_attributes/>
   </element>
   <element>
     <id>UMLPackage</id>
@@ -1089,7 +1035,7 @@ bg=#cbe395</panel_attributes>
       <w>512</w>
       <h>176</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <panel_attributes>lt=-&gt;&gt;</panel_attributes>
     <additional_attributes>620.0;200.0;590.0;200.0;590.0;10.0;30.0;10.0;30.0;30.0;10.0;30.0</additional_attributes>
   </element>
   <element>
@@ -1424,5 +1370,84 @@ fg=#007bff</panel_attributes>
     <panel_attributes>lt=&lt;&lt;&lt;-
 fg=#007bff</panel_attributes>
     <additional_attributes>10.0;10.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>856</y>
+      <w>120</w>
+      <h>416</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>130.0;500.0;100.0;500.0;100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>760</x>
+      <y>1088</y>
+      <w>120</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;</panel_attributes>
+    <additional_attributes>130.0;230.0;80.0;230.0;80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>272</x>
+      <y>1208</y>
+      <w>192</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>/com/status
+(Path on Xenon-device)
+--
+status:
+ + val: int
+ + level: port | bus | com
+ + txt: string
+ + label: string
+halign=left
+bg=#dfe3ee
+fg=#814648</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>272</x>
+      <y>1344</y>
+      <w>192</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>/system
+(Path on Xenon-device)
+--
++ interface: string
++ arch: string
++ cpus: [
+   + model
+   + speed
+   + times
+  ]
++ endianess: string
++ eol: string
++ freemem: number
++ hostname: string
++ networkInterfaces [
+     lo:
+     wlp64s0: [
+   	    0: {
+   	       address: string,
+   	       mac: string
+   	    }
+      ]
+    ]
+halign=left
+bg=#dfe3ee
+fg=#814648</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
