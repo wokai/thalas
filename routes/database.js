@@ -59,9 +59,6 @@ router.get('/gas/:episode', function(request, result, next) {
     attributes: [ 'time', 'fio2', 'feo2', 'o2uptake', 'fico2', 'feco2' ],
     where: {
       episodeId: request.params.episode,
-      time: {
-        [Op.gt]: new Date(new Date() - 600 * 1000)
-      }
     },
     raw : true
   }).then(res => { result.status(200).json(res); });
@@ -73,9 +70,6 @@ router.get('/inhal/:episode', function(request, result, next) {
     attributes: [ 'time', 'mac', 'gas', 'insp', 'exsp', 'cons' ],
     where: {
       episodeId: request.params.episode,
-      time: {
-        [Op.gt]: new Date(new Date() - 600 * 1000)
-      }
     },
     raw : true
   }).then(res => { result.status(200).json(res); });
