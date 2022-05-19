@@ -75,6 +75,13 @@ router.get('/inhal/:episode', function(request, result, next) {
   }).then(res => { result.status(200).json(res); });
 });
 
+
+router.get('/delete/:episode', function(request, result, next) {
+  MedibusVentInhalData.destroy({
+    where: { episodeId: request.params.episode },
+  });
+});
+
 /// ------------------------------------------------------------------------ ///
 /// Interval query
 /// interval object: { id, cycles }
