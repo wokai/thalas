@@ -77,10 +77,37 @@ router.get('/inhal/:episode', function(request, result, next) {
 
 
 router.get('/delete/:episode', function(request, result, next) {
-  MedibusVentInhalData.destroy({
-    where: { episodeId: request.params.episode },
+  
+  let count = {
+    inhal: 0,
+    gas: 0,
+    resp: 0,
+    episode: 0
+  }
+  
+  let inhal = MedibusVentInhalData.destroy({
+    where: { episodeId: request.params.episode }
+  }).then(c => { count.inhal = c});
+    
+  let gas = MedibusVentGasData.destroy({
+    where: { episodeId: request.params.episode }
+  }).then(c => { count.gas = c });
+  
+  let resp = MedibusVentRespData.destroy({
+    where: { episodeId: request.params.episode }
+  }).then(c => { count.resp = c });
+  
+  let episode = Episode.destroy({
+    where: { id: request.params.episode }
+  }).then(c => { count.episode = c });
+  
+  Promise.all([inhal, gas, resp]).then(() => {
+    result.status(200).json(count); 
+  }, (reason) => {
+    result.status(400).json(reason);
   });
 });
+
 
 /// ------------------------------------------------------------------------ ///
 /// Interval query
