@@ -1,7 +1,7 @@
 'use strict';
 /*******************************************************************************
  * The MIT License
- * Copyright 2021, Wolfgang Kaisers
+ * Copyright 2023, Wolfgang Kaisers
  * Permission is hereby granted, free of charge, to any person obtaining a 
  * copy of this software and associated documentation files (the "Software"), 
  * to deal in the Software without restriction, including without limitation 
@@ -35,8 +35,6 @@ const morgan        = require('morgan');
 const colors        = require('colors');
 
 const index_router  = require('./routes/index');
-const users_router  = require('./routes/users');
-const test_router   = require('./routes/test');
 const param_router  = require('./routes/param');
 const device_router = require('./routes/device');
 const db_router     = require('./routes/database');
@@ -65,8 +63,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/',        index_router);
-app.use('/users',   users_router);
-app.use('/test',    test_router);
 app.use('/param',   param_router);
 app.use('/device',  device_router);
 app.use('/db',      db_router);

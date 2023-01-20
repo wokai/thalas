@@ -1,7 +1,7 @@
 'use strict';
 /*******************************************************************************
  * The MIT License
- * Copyright 2022, Wolfgang Kaisers
+ * Copyright 2023, Wolfgang Kaisers
  * Permission is hereby granted, free of charge, to any person obtaining a 
  * copy of this software and associated documentation files (the "Software"), 
  * to deal in the Software without restriction, including without limitation 
@@ -37,7 +37,7 @@ const router = express.Router();
 
 router.use('/episode', episode_router);
 
-/// Get complete list of all parameters
+/// Get complete list of all devices
 router.get('/device',  function(request, result, next){
   Device.findAll().then(res => {
     result.status(200).json(res);

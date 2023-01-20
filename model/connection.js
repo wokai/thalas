@@ -34,7 +34,6 @@ const General = require(path.join(__dirname, '..', 'config', 'general'));
 ///     
 /// ////////////////////////////////////////////////////////////////////////////
 
-
 /// Convert IP-string to number and back
 class Connection {
   
@@ -46,11 +45,7 @@ class Connection {
       begin = new Date()
     }
   }
-  
-  
 }
-
-
 
 module.exports = {
   Connection

@@ -1,7 +1,7 @@
 'use strict';
 /*******************************************************************************
  * The MIT License
- * Copyright 2022, Wolfgang Kaisers
+ * Copyright 2023, Wolfgang Kaisers
  * Permission is hereby granted, free of charge, to any person obtaining a 
  * copy of this software and associated documentation files (the "Software"), 
  * to deal in the Software without restriction, including without limitation 
@@ -23,6 +23,7 @@
 const express = require('express');
 const http    = require('http');
 const path    = require('path');
+const win     = require(path.join(__dirname, '..', 'logger', 'logger'));
 const { Sequelize, Op }  = require('sequelize');
 const colors  = require('colors');
 
@@ -130,22 +131,26 @@ router.put('/update/time', function(request, result, next){
   const begin = new Date(request.body.begin);
   const end = new Date(request.body.end);
   
-  /// Return error
-  if((typeof value !== 'number') | isNaN(begin.getTime()) | isNaN(end.getTime())){
+  /// Return error upon type mismatch
+  if((typeof request.body.eid !== 'number') | isNaN(begin.getTime()) | isNaN(end.getTime())){
+    win.def.log({ level: 'info', file: 'routes/episode.js', func: 'put:update/time', message: `ERROR due to type mismatch: ID ${request.body.eid} | Begin ${begin.toLocaleString('de-DE')} | End: ${end.toLocaleString('de-DE')}`});
+    console.log(`[/routes/episode] /update/time ERROR due to type mismatch: ID ${request.body.eid} | Begin ${begin.toLocaleString('de-DE')} | End: ${end.toLocaleString('de-DE')}`.red);
     result.status(400).json(0);
     return;
   }
   
+  /// Static update function
   Episode.update({
     begin: new Date(request.body.begin),
-    end: new Date(request.body.end)
+    end  : new Date(request.body.end)
   }, {
-    where: { id: request.body.id }
+    where: { id: request.body.eid }
   })
   .then(res => {
     /// res = [ 1 ] on success
+    win.def.log({ level: 'info', file: 'routes/episode.js', func: 'put:update/time', message: `ID ${request.body.eid} | Begin ${begin.toLocaleString('de-DE')} | End: ${end.toLocaleString('de-DE')} | Success`});
     result.status(200).json(res[0]);
   })
-})
+});
 
 module.exports = router;

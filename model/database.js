@@ -1,7 +1,7 @@
 'use strict';
 /*******************************************************************************
  * The MIT License
- * Copyright 2022, Wolfgang Kaisers
+ * Copyright 2023, Wolfgang Kaisers
  * Permission is hereby granted, free of charge, to any person obtaining a 
  * copy of this software and associated documentation files (the "Software"), 
  * to deal in the Software without restriction, including without limitation 
@@ -20,11 +20,10 @@
  * USE OR OTHER DEALINGS IN THE SOFTWARE.
  ******************************************************************************/
 
-const { Sequelize, Model, DataTypes } = require('sequelize');
-const path = require('path');
-
+const path    = require('path');
 const General = require(path.join(__dirname, '..', 'config', 'general'));
 
+const { Sequelize, Model, DataTypes } = require('sequelize');
 
 /// //////////////////////////////////////////////////////////////////////// ///
 /// Thalas database
@@ -393,7 +392,6 @@ class MbDbInput {
   }
   
 }
-
 
 module.exports = {
   sequelize,

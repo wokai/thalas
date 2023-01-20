@@ -119,9 +119,7 @@ CREATE USER 'thalasroot'@'localhost' IDENTIFIED BY 'g3Rsa879:n4sqPkxz';
 GRANT ALL ON thalas.* TO 'thalasroot'@'localhost';
 ```
 
-
 ## Backup and restore
-
 
  - Backup `mysqldump thalas > thalas.sql`
  - Replace `sed -i 's/utf8mb4_0900_ai_ci/utf8mb4_general_ci/g' thalas.sql`
@@ -136,8 +134,6 @@ It replaces 'utf8mb4_0900_ai_ci' with 'utf8mb4_general_ci'.
  - The option `-i` tells *sed* to change file in place (instead of writing to standard output)
  - The flag `s` is the substitute command
  - The flag `g` adopts general substitution (not only the first occurrence in a line is replaced)
-
-
 
 ### Add Column
 
@@ -164,7 +160,6 @@ It replaces 'utf8mb4_0900_ai_ci' with 'utf8mb4_general_ci'.
 <!-- ----------------------------------------------------------------------- -->
 
 ## Installation
-
 
  - `npm i date-fns chart.js chartjs-adapter-date-fns`
 
