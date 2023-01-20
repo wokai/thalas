@@ -116,7 +116,7 @@ class XenonController {
   }
   
   async stopIntervalQuery() {
-    win.def.log({ level: 'info', file: 'xenonController.js', func: 'stopIntervalQuery', message: 'Stop interval'});
+    win.def.log({ level: 'info', file: 'xenonController.js', func: 'stopIntervalQuery', message: `Stopped interval id: ${this.#interval.id}`});
     if(this.#intId !== null){
       clearInterval(this.#intId);
       this.#intId = null;
@@ -137,7 +137,7 @@ class XenonController {
       cycles: 0
     });
     await this.#interval.save();
-    win.def.log({ level: 'info', file: 'xenonController.js', func: 'startIntervalQuery', message: `Interval id: ${this.#interval.id}`});    
+    win.def.log({ level: 'info', file: 'xenonController.js', func: 'startIntervalQuery', message: `Started interval id: ${this.#interval.id}`});    
     return this.#interval;
   }
 }
