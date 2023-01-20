@@ -22,9 +22,11 @@
 
 const express = require('express');
 const http    = require('http');
-const path    = require('path');
 const { Op }  = require('sequelize');
 const colors  = require('colors');
+const path    = require('path');
+
+const win     = require(path.join(__dirname, '..', 'logger', 'logger'));
 
 
 const { Device, XenonOsStatus, Episode, MedibusVentRespData, MedibusVentGasData, MedibusVentInhalData }   = require(path.join('..', 'model', 'database'));
@@ -102,6 +104,7 @@ router.get('/delete/:episode', function(request, result, next) {
   }).then(c => { count.episode = c });
   
   Promise.all([inhal, gas, resp]).then(() => {
+    win.def.log({ level: 'info', file: 'routes/database.js', func: 'get:/delete/episode', message: `Episode data deleted for episode ${request.params.episode}`});
     result.status(200).json(count); 
   }, (reason) => {
     result.status(400).json(reason);
