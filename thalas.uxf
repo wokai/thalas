@@ -528,19 +528,22 @@ bg=#aa8db1</panel_attributes>
       <x>1520</x>
       <y>1296</y>
       <w>216</w>
-      <h>264</h>
+      <h>288</h>
     </coordinates>
     <panel_attributes>/model/xenon
 --
-_Xenon_ (extends Device)
+_Xenon_
+(extends: Device)
 --
 #port
+#episode (db)
+#lastMsg
 --
 static
  + getXenonArray()
 --
 async
- + initEpisode()
+ + initEpisode(episode)
  + endEpisode()
  + newEpisode()
  + getOsStatus()
@@ -550,6 +553,7 @@ async
  + stopPort()
  + closePort()
  + getVentData()
+ + queryVentData()
 --
 bg=#7193ff</panel_attributes>
     <additional_attributes/>
@@ -597,13 +601,17 @@ bg=#7193ff</panel_attributes>
       <x>1544</x>
       <y>2184</y>
       <w>216</w>
-      <h>184</h>
+      <h>232</h>
     </coordinates>
     <panel_attributes>/controller/xenonController
 --
 _XenonController_
 --
 #array
+#initId
+#interval
+--
+interval
 --
 async
  + ping(id)
@@ -612,6 +620,7 @@ async
  + openPort(id)
  + stopPort(id)
  + closePort(id)
+ + getVentData(id)
  + startIntervalQuery(time=4000)
  + stopIntervalQuery()
 bg=#aa8db1</panel_attributes>
@@ -679,16 +688,18 @@ fg=#007bff</panel_attributes>
       <x>864</x>
       <y>1224</y>
       <w>168</w>
-      <h>104</h>
+      <h>136</h>
     </coordinates>
     <panel_attributes>_Xenon_
-(Xenon-device)
+(via REST)
 --
 /port
 /data
 /io/status
 /com/status
 /system
+/param
+/episode
 bg=#ff6162</panel_attributes>
     <additional_attributes/>
   </element>
@@ -978,10 +989,10 @@ bg=#cbe395</panel_attributes>
       <x>1416</x>
       <y>1040</y>
       <w>472</w>
-      <h>512</h>
+      <h>600</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>570.0;10.0;490.0;10.0;490.0;620.0;50.0;620.0;50.0;570.0;10.0;570.0</additional_attributes>
+    <additional_attributes>570.0;10.0;490.0;10.0;490.0;730.0;50.0;730.0;50.0;570.0;10.0;570.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -1011,10 +1022,10 @@ bg=#cbe395</panel_attributes>
       <x>1416</x>
       <y>1072</y>
       <w>472</w>
-      <h>488</h>
+      <h>576</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>570.0;10.0;500.0;10.0;500.0;590.0;40.0;590.0;40.0;560.0;10.0;560.0</additional_attributes>
+    <additional_attributes>570.0;10.0;500.0;10.0;500.0;700.0;40.0;700.0;40.0;560.0;10.0;560.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -1286,7 +1297,7 @@ fg=#007bff</panel_attributes>
     <id>UMLPackage</id>
     <coordinates>
       <x>1520</x>
-      <y>1600</y>
+      <y>1904</y>
       <w>216</w>
       <h>96</h>
     </coordinates>
@@ -1308,11 +1319,11 @@ fg=#007bff</panel_attributes>
       <x>1728</x>
       <y>1608</y>
       <w>160</w>
-      <h>24</h>
+      <h>328</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;-
 fg=#007bff</panel_attributes>
-    <additional_attributes>10.0;11.0;180.0;10.0</additional_attributes>
+    <additional_attributes>10.0;391.0;160.0;390.0;160.0;10.0;180.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>

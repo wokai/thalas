@@ -38,10 +38,11 @@ const sequelize = new Sequelize(
   General.database.name,
   General.database.user,
   General.database.password, 
-  { 
+  {
+    host: General.database.host,
     dialect: 'mysql',
     /// 'Change to false to disable logging
-    logging: false ///console.log
+    logging: false // console.log
   }
 )
 

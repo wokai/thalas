@@ -111,6 +111,7 @@ The connections of data capturing servers to recording devices are fragile:
 
  - Open admin terminal `sudo su`
  - Login `mysql -u root`
+ - Display port: `SHOW GLOBAL VARIABLES LIKE 'PORT';`
 
 Create thalas database:
 ```c
