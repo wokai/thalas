@@ -112,12 +112,34 @@ The connections of data capturing servers to recording devices are fragile:
  - Open admin terminal `sudo su`
  - Login `mysql -u root`
  - Display port: `SHOW GLOBAL VARIABLES LIKE 'PORT';`
+ 
+## Logging
+
+ - Enable Access denied logging: `SET GLOBAL log_warnings=2;`
+ - `SHOW GLOBAL VARIABLES LIKE 'log_error';`
+ - [Error logs](https://mariadb.com/kb/en/server-system-variables/#log_error)
+ - [General query log](https://mariadb.com/kb/en/general-query-log/)
+ - `SET GLOBAL general_log_file='/var/log/mysql/mariadb.log';`
+ - `SET GLOBAL log_output = 'FILE';`
+ - `SET GLOBAL general_log = 'ON';`
+ - `SHOW VARIABLES LIKE 'general_log%';`
+ 
+## SSL
+
+ - `SHOW VARIABLES LIKE '%ssl%';`
+ - `have_ssl` is `DISABLED`
+ - SET GLOBAL have_ssl = 'YES';
 
 Create thalas database:
 ```c
 CREATE DATABASE thalas;
-CREATE USER 'thalasroot'@'localhost' IDENTIFIED BY 'g3Rsa879:n4sqPkxz';
+CREATE USER 'thalasroot'@'localhost' IDENTIFIED BY 'xyz';
 GRANT ALL ON thalas.* TO 'thalasroot'@'localhost';
+```
+
+Change password: 
+```c
+SET PASSWORD FOR 'thalasroot'@'localhost' = PASSWORD('xxz');
 ```
 
 ## Backup and restore

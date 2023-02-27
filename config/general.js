@@ -31,6 +31,7 @@ const config = {
     level: 'info'
   },
   database: {
+    host: '127.0.0.1',
     user: 'xxx',
     name: 'thalas',
     password: 'xxx',
