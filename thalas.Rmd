@@ -87,8 +87,6 @@ The connections of data capturing servers to recording devices are fragile:
  - A **period** is a part of a session included in a single report.
 
 
-
-
 ## Observations
 
   - An **observation** is the measured value of a single parameter at a single
@@ -181,10 +179,30 @@ xenon-episode.
 <!-- ----------------------------------------------------------------------- -->
 ´
 
-[Snomed](https://confluence.ihtsdotools.org/display/DOCGLOSS/SNOMED+CT+identifier):
+[Snomed](https://confluence.ihtsdotools.org):
 
  - A *Snomed CT identifier* is a unique integer, applied to components
+ - [Dräger](https://www.draeger.com/Library/Content/Beatmungsmodi_in_der_Intensivmedizin_nomenklatur-bk-9066354-de.pdf)
  
+## Anesthesia related identifier
+
+ - Anesthesia CRG
+ 
+ - [Snomed-CT via Bioontology](https://bioportal.bioontology.org/ontologies/SNOMEDCT)
+ - [EBI homepage](https://www.ebi.ac.uk/ols/ontologies/snomed)
+
+
++---------------+---------------+---------------------------------------------------------+
+|               | Snomed CT ID  | Description                                             |
++:==============+:==============+:========================================================+
+|               | 371907003     | Oxygen administration by nasal cannula                  |
++---------------+---------------+---------------------------------------------------------+
+|               | 243142003     | Dual pressure spontaneous ventilation support           |
++---------------+---------------+---------------------------------------------------------+
+|               | 250854009     | Positive end expiratory pressure                        |
++---------------+---------------+---------------------------------------------------------+
+|               | 286812008     | Pressure controlled ventilation                         |
++---------------+---------------+---------------------------------------------------------+
  
 --------------------------------------------------------------------------------
 
