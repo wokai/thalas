@@ -57,11 +57,10 @@ Thus, human input is required for correct establishing of associations.
 
 Recordings emerge from data transfer from one or more Xenon clients to a thalas
 server.
-By itself, these recordings solely are associated with a device.
+By itself, these recordings solely solely reflect an established communication
+with a device.
 Further meaningful utilization bases on association with a patient and this is
 usually done using locations.
-
-
 
  - An **episode** is a series of uninterrupted observations captured by a
   single device on a single patient in a single location.
