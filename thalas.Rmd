@@ -33,8 +33,8 @@ output:
 
 ## Interaction level entities
 
- - A **connection** is a period of successful network communication between a
-   *thalas* server and a *device*.
+ - A **connection** is a period of successful network communication between an
+   interface (for example a *thalas* server) and a *device*.
    during the time of a connection, the server and the device can communicate
    with each other.
    By specifying the *End-Time*, a connection expires.
@@ -69,8 +69,8 @@ These definitions shall facilitate the association of captured recordings to
 an electronic medical record. Therefore:
 
  - A location should be specified in a way allowing a 1:1 relation to an episode.
-  A criterion could be the existence of wall connections to which a device
-  needs to be connected.
+   A criterion could be the existence of wall connections to which a device
+   needs to be connected.
 
     
 The connections of data capturing servers to recording devices are fragile:
