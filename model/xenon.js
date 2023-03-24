@@ -61,15 +61,21 @@ class Xenon extends Device {
   /// Expects episode objects of type 
   /// { uuid: string, begin: date (ISOString), end: date (ISOString) }
   /// ////////////////////////////////////////////////////////////////////// ///
+  
+  /**
+   * @usedBy{this.newEpisode}
+   * @usedBy{this.openPort}
+   * @param{episode} - (uuid)
+   **/
+  
   async initEpisode(episode) {
     this.#episode = Episode.build({
       deviceid: this.id,
-      value:  episode.uuid,
-      begin:  episode.begin, /// ISO format
+      value:  episode,
+      begin:  new Date().toISOString(),
       end:    null
     })
     await this.#episode.save();
-    console.log(`[model/Xenon] initEpisode Id: ${this.#episode.id}`.green);
     win.def.log({ level: 'info', file: 'xenon.js', func: 'initEpisode', message: `EpisodeId: ${this.#episode.id}`});
     return this.#episode;
   }
@@ -184,7 +190,7 @@ class Xenon extends Device {
     }
     return this.getClientRoute('/data/vent')
       .then(async res => {
-        if(res.data !== null ) { 
+        if(res.data !== null ) {
           this.#lastMsg = res.data.msgId;
           try{
             await MbDbInput.saveMedibusVentRespData(res.data, this.id, this.#episode.id);

@@ -1,7 +1,7 @@
 'use strict';
 /*******************************************************************************
  * The MIT License
- * Copyright 2022, Wolfgang Kaisers
+ * Copyright 2023, Wolfgang Kaisers
  * Permission is hereby granted, free of charge, to any person obtaining a 
  * copy of this software and associated documentation files (the "Software"), 
  * to deal in the Software without restriction, including without limitation 
@@ -38,7 +38,6 @@ class MedibusRespiration {
   
   setEpisode(e) { this.#episode = e; }
   
-  
   static from(res, device) {
     
     let mr =  new MedibusRespiration(device);
@@ -64,42 +63,4 @@ class MedibusRespiration {
       });
     })
   }
-  
-  /*
-            res.data = {
-            msgId: res.data.msgId,
-            time: res.data.time,
-            episode: res.data.episode.uuid,
-            respiration: {
-              peak: res.data.respiration.peak.value,
-              tidalvolume: res.data.respiration.tidalvolume.value,
-              minutevolume: res.data.respiration.minutevolume.value
-            },
-            gas: {
-              fio2: res.data.gas.fio2.value,
-              feo2: res.data.gas.feo2.value,
-              o2uptake: res.data.gas.o2uptake.value,
-              feco2: res.data.gas.feco2.value,
-              fico2: res.data.gas.fico2.value
-            },
-            inhalation: {
-              mac: res.data.inhalation.mac,
-              desflurane: {
-                insp: res.data.inhalation.desflurane.insp.value,
-                exp:  res.data.inhalation.desflurane.exp.value,
-                cons: res.data.inhalation.desflurane.cons
-              },
-              sevoflurane: {
-                insp: res.data.inhalation.sevoflurane.insp.value,
-                exp:  res.data.inhalation.sevoflurane.exp.value,
-                cons: res.data.inhalation.sevoflurane.cons
-              },
-              isoflurane: {
-                insp: res.data.inhalation.isoflurane.insp.value,
-                exp:  res.data.inhalation.isoflurane.exp.value,
-                cons: res.data.inhalation.isoflurane.cons
-              }
-            }
-          }
-  */
 }
