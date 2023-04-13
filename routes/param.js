@@ -51,25 +51,41 @@ router.post('/update', (request, result) => {
   Model.parameters.update(request.body)
    .then(() => {
       console.log('[param.update] Save updated Map of size: %i'.green, Model.parameters.size)
-      result.status(200).json({ status: 'Success', success: true,  reason: '' })
+      result.status(200).json({ status: 'Success', success: true,  reason: '', id: request.body.id })
     })
     .catch(err => {
       console.log('[param.update] Saving update error: '.red, err);
-      result.status(500).json({ status: 'Error',   success: false, reason: err });
+      result.status(500).json({ status: 'Error',   success: false, reason: err, id: request.body.id });
     })
 })
 
-router.post('/upsert', (request, result) => { 
+router.post('/upsert', (request, result) => {
     Model.parameters.upsert(request.body)
-    .then(res  => {
-      //console.log(`[param.upsert] Update param code id ${request.body.id} success.`);
-      result.status(200).json({ status: 'Success', success: true,  reason: '' }) 
+    .then(([data, created])  => {
+      console.log(`[param.upsert] Update param code id ${request.body.id} success. Created: ${created}`);
+      console.log(data.toJSON());
+      result.status(200).json({ status: 'Success', success: true,  reason: '', id: request.body.id)}) 
     }).catch(err => {
       console.log(`[param.upsert] Update param code id ${request.body.id} error: ${err}.`);
-      result.status(500).json({ status: 'Error',   success: false, reason : err })
+      result.status(500).json({ status: 'Error',   success: false, reason : err, id: request.body.id })
     })
 });
 
+router.post('/create', (request, result) => { 
+    Model.parameters.create(request.body)
+    .then(res  => {
+      console.log(`[param.create] Creation of param ${request.body.code} success. Id: ${res.id}`);
+      result.status(200).json({ status: 'Success', success: true,  reason: '', id: res.id }) 
+    }).catch(err => {
+      console.log(`[param.create] Creation of param ${request.body.code} error: ${err}.`);
+      result.status(500).json({ status: 'Error',   success: false, reason : err, id: -1 })
+    })
+});
+
+
+/// //////////////////////////////////////////////////////////////////////// ///
+/// Saves all parameters from MySql Database into JSON-file.
+/// //////////////////////////////////////////////////////////////////////// ///
 router.get('/save', (request, result) => {
   Model.parameters.saveToJson().
     then(() => {
