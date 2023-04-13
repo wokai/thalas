@@ -1,7 +1,7 @@
 'use strict';
 /*******************************************************************************
  * The MIT License
- * Copyright 2021, Wolfgang Kaisers
+ * Copyright 2023, Wolfgang Kaisers
  * Permission is hereby granted, free of charge, to any person obtaining a 
  * copy of this software and associated documentation files (the "Software"), 
  * to deal in the Software without restriction, including without limitation 
@@ -35,60 +35,65 @@ router.get('/',  function(request, result, next){
 
 
 /// //////////////////////////////////////////////////////////////////////// ///
+/// TransactResultType
+/// status:  string
+/// success: boolean
+/// reason:  string
+/// //////////////////////////////////////////////////////////////////////// ///
+
+/// //////////////////////////////////////////////////////////////////////// ///
 /// Update object
 /// //////////////////////////////////////////////////////////////////////// ///
 
 
 router.post('/update', (request, result) => {
-  
   /// Expects: request.body = { code : ...}
   Model.parameters.update(request.body)
    .then(() => {
       console.log('[param.update] Save updated Map of size: %i'.green, Model.parameters.size)
-      result.status(200).json({ status: 'OK' })
+      result.status(200).json({ status: 'Success', success: true,  reason: '' })
     })
-    .catch(reason => {
-      console.log('[param.update] Saving update error: '.red, reason);
-      result.status(500).json({ status: 'Error', reason: reason });
+    .catch(err => {
+      console.log('[param.update] Saving update error: '.red, err);
+      result.status(500).json({ status: 'Error',   success: false, reason: err });
     })
 })
 
-router.post('/upsert', (request, result) => {
-    /// Workaround ...
-    request.body.updatedAt = new Date();
-    
+router.post('/upsert', (request, result) => { 
     Model.parameters.upsert(request.body)
-    .then(res  => result.status(200).json({ status: 'Success', result: res }))
-    .catch(err => result.status(500).json({ status: 'Error',   result: err }))
-    
+    .then(res  => {
+      //console.log(`[param.upsert] Update param code id ${request.body.id} success.`);
+      result.status(200).json({ status: 'Success', success: true,  reason: '' }) 
+    }).catch(err => {
+      console.log(`[param.upsert] Update param code id ${request.body.id} error: ${err}.`);
+      result.status(500).json({ status: 'Error',   success: false, reason : err })
+    })
 });
-
 
 router.get('/save', (request, result) => {
   Model.parameters.saveToJson().
     then(() => {
       console.log('[param.save] Array size: %i'.green, Model.parameters.size)
-      result.status(200).json({ status: 'OK' })
+      result.status(200).json({ status: 'Success', success: true, reason: '' })
     })
 });
 
 /// //////////////////////////////////////////////////////////////////////// ///
 /// Inserts one new object into entrez collection and returns ID
+/// 
+/// Currently does not update JSON file ....
+/// This can be done using .saveToJson(): see /save
 /// //////////////////////////////////////////////////////////////////////// ///
-
-
-/// Currently does not update ...
 router.post('/insert', (request, result) => {
-  
   /// Expects: request.body = { code : ...}
   Model.parameters.upsert(request.body)
    .then(() => {
       console.log('[param.insert] Save updated Map of size: %i'.green, Model.parameters.size)
-      result.status(200).json({ status: 'OK' })
+      result.status(200).json({ status: 'Success', success: true,  reason: '' }) 
     })
-    .catch(reason => {
-      console.log('[param.insert] Saving update error: '.red, reason);
-      result.status(500).json({ status: 'Error', reason: reason });
+    .catch(err => {
+      console.log('[param.insert] Saving update error: '.red, err);
+      result.status(500).json({ status: 'Error',   success: false, reason : err });
     })
 });
 

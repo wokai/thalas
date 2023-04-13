@@ -90,6 +90,11 @@ router.get('/port/close/:devid', function(request, result, next) {
     .catch(err => result.status(200).json(err))
 });
 
+
+  /**
+   * @source{xenon} - (/model/data/ventilation) - (Ventilation.getValueObject) 
+   **/
+
 router.get('/port/vent/:devid', function(request, result, next) {
   controller.getVentData(request.params.devid)
     .then(res  => result.status(200).json(res))

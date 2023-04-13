@@ -5,14 +5,14 @@
     "hexCode": 27,
     "description": "Consumption Halothane (Liquid)",
     "unit": "mL",
-    "snomedid": 0,
+    "snomedid": "-1",
     "format": "XXXX",
     "factor": 1,
     "m": "x",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:04:17.088Z"
   },
   {
     "id": 2,
@@ -20,14 +20,14 @@
     "hexCode": 28,
     "description": "Consumption Enflurane (Liquid)",
     "unit": "mL",
-    "snomedid": 0,
+    "snomedid": "-1",
     "format": "XXXX",
     "factor": 1,
     "m": "x",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:40:15.812Z"
   },
   {
     "id": 3,
@@ -35,14 +35,14 @@
     "hexCode": 29,
     "description": "Consumption Isoflurane (Liquid)",
     "unit": "mL",
-    "snomedid": 0,
+    "snomedid": "-1",
     "format": "XXXX",
     "factor": 1,
     "m": "x",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:04:28.677Z"
   },
   {
     "id": 4,
@@ -50,14 +50,14 @@
     "hexCode": 30,
     "description": "Consumption Desflurane (Liquid)",
     "unit": "mL",
-    "snomedid": 0,
+    "snomedid": "-1",
     "format": "XXXX",
     "factor": 1,
     "m": "x",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:40:08.042Z"
   },
   {
     "id": 5,
@@ -65,14 +65,14 @@
     "hexCode": 31,
     "description": "Consumption Sevoflurane (Liquid)",
     "unit": "mL",
-    "snomedid": 0,
+    "snomedid": "-1",
     "format": "XXXX",
     "factor": 1,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:40:23.988Z"
   },
   {
     "id": 6,
@@ -86,8 +86,8 @@
     "m": "X",
     "ll": true,
     "hl": true,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:00:14.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 7,
@@ -101,8 +101,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:00:20.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 8,
@@ -116,8 +116,8 @@
     "m": "X",
     "ll": true,
     "hl": true,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:00:24.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 9,
@@ -131,8 +131,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:00:29.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 10,
@@ -146,8 +146,8 @@
     "m": "X",
     "ll": true,
     "hl": true,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:00:34.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 11,
@@ -161,8 +161,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:00:39.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 12,
@@ -176,8 +176,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:00:42.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 13,
@@ -191,8 +191,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:00:47.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 14,
@@ -206,8 +206,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 15,
@@ -221,8 +221,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 16,
@@ -236,8 +236,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 17,
@@ -251,8 +251,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 18,
@@ -260,14 +260,14 @@
     "hexCode": 92,
     "description": "2nd Insp. Agent",
     "unit": "kPa",
-    "snomedid": 0,
+    "snomedid": "-1",
     "format": "_X.X",
     "factor": 10,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:00:52.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:57:06.872Z"
   },
   {
     "id": 19,
@@ -275,14 +275,14 @@
     "hexCode": 93,
     "description": "2nd Exp. Agent",
     "unit": "kPa",
-    "snomedid": 0,
+    "snomedid": "-1",
     "format": "_X.X",
     "factor": 10,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:00:58.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:57:11.501Z"
   },
   {
     "id": 20,
@@ -290,14 +290,14 @@
     "hexCode": 172,
     "description": "Insp. MAC",
     "unit": "-",
-    "snomedid": 0,
+    "snomedid": "860932002",
     "format": "_X.X",
     "factor": 10,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:01:03.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:42:24.352Z"
   },
   {
     "id": 21,
@@ -311,8 +311,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:01:08.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 22,
@@ -326,8 +326,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:01:23.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 23,
@@ -341,8 +341,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:01:28.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 24,
@@ -356,8 +356,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:01:32.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 25,
@@ -371,8 +371,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:01:35.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 26,
@@ -386,8 +386,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:01:38.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 27,
@@ -401,8 +401,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:01:41.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 28,
@@ -410,14 +410,14 @@
     "hexCode": 237,
     "description": "Insp. 2nd Agent",
     "unit": "%",
-    "snomedid": 0,
+    "snomedid": "-1",
     "format": "XX.X",
     "factor": 10,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:01:45.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:56:53.873Z"
   },
   {
     "id": 29,
@@ -431,8 +431,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:01:49.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 30,
@@ -446,8 +446,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 31,
@@ -461,8 +461,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 32,
@@ -476,8 +476,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 33,
@@ -491,8 +491,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 34,
@@ -506,8 +506,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 35,
@@ -521,8 +521,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:02:05.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 36,
@@ -536,8 +536,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 37,
@@ -545,14 +545,14 @@
     "hexCode": 238,
     "description": "Exp. 2nd Agent",
     "unit": "%",
-    "snomedid": 0,
+    "snomedid": "-1",
     "format": "XX.X",
     "factor": 10,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:02:13.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:55:36.190Z"
   },
   {
     "id": 38,
@@ -560,14 +560,14 @@
     "hexCode": 244,
     "description": "Insp. Halothane",
     "unit": "%",
-    "snomedid": 0,
+    "snomedid": "425952009",
     "format": "_X.X",
     "factor": 10,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:02:17.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:44:55.099Z"
   },
   {
     "id": 39,
@@ -575,14 +575,14 @@
     "hexCode": 245,
     "description": "Exp. Halothane",
     "unit": "%",
-    "snomedid": 0,
+    "snomedid": "427034007",
     "format": "_X.X",
     "factor": 10,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:02:21.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:45:23.427Z"
   },
   {
     "id": 40,
@@ -590,14 +590,14 @@
     "hexCode": 246,
     "description": "Insp. Enflurane",
     "unit": "%",
-    "snomedid": 0,
+    "snomedid": "427604003",
     "format": "_X.X",
     "factor": 10,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:02:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:45:58.004Z"
   },
   {
     "id": 41,
@@ -605,14 +605,14 @@
     "hexCode": 247,
     "description": "Exp. Enflurane",
     "unit": "%",
-    "snomedid": 0,
+    "snomedid": "426524000",
     "format": "_X.X",
     "factor": 10,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:02:29.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:46:27.422Z"
   },
   {
     "id": 42,
@@ -620,14 +620,14 @@
     "hexCode": 248,
     "description": "Insp. Isoflurane",
     "unit": "%",
-    "snomedid": 0,
+    "snomedid": "426504004",
     "format": "_X.X",
     "factor": 10,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:02:33.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:47:16.494Z"
   },
   {
     "id": 43,
@@ -635,14 +635,14 @@
     "hexCode": 249,
     "description": "Exp. Isoflurane",
     "unit": "%",
-    "snomedid": 0,
+    "snomedid": "425421000",
     "format": "_X.X",
     "factor": 10,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:02:36.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:46:53.299Z"
   },
   {
     "id": 44,
@@ -650,14 +650,14 @@
     "hexCode": 251,
     "description": "Insp. N2O",
     "unit": "%",
-    "snomedid": 0,
+    "snomedid": "250798000",
     "format": "XXX_",
     "factor": 1,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:54:19.855Z"
   },
   {
     "id": 45,
@@ -665,14 +665,14 @@
     "hexCode": 252,
     "description": "Exp. N2O",
     "unit": "%",
-    "snomedid": 0,
+    "snomedid": "250799008",
     "format": "XXX_",
     "factor": 1,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:54:42.329Z"
   },
   {
     "id": 46,
@@ -680,14 +680,14 @@
     "hexCode": 107,
     "description": "Ambient pressure",
     "unit": "mbar",
-    "snomedid": 0,
+    "snomedid": "40513000",
     "format": "XXXX",
     "factor": 1,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:55:13.687Z"
   },
   {
     "id": 47,
@@ -695,14 +695,14 @@
     "hexCode": 180,
     "description": "Respiratory Rate (Pressure)",
     "unit": "1/min",
-    "snomedid": 0,
+    "snomedid": "86290005",
     "format": "XX__",
     "factor": 1,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T09:05:56.513Z"
   },
   {
     "id": 48,
@@ -716,8 +716,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:02:45.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 49,
@@ -725,14 +725,14 @@
     "hexCode": 189,
     "description": "Apnea Duration",
     "unit": "sec",
-    "snomedid": 0,
+    "snomedid": "-1",
     "format": "XXX_",
     "factor": 1,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T09:15:42.282Z"
   },
   {
     "id": 50,
@@ -740,14 +740,14 @@
     "hexCode": 215,
     "description": "Respiratory Rate (Volume/Flow)",
     "unit": "1/min",
-    "snomedid": 0,
+    "snomedid": "86290005",
     "format": "XX__",
     "factor": 1,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T09:06:03.179Z"
   },
   {
     "id": 51,
@@ -761,8 +761,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 52,
@@ -770,14 +770,14 @@
     "hexCode": 213,
     "description": "Respiratory Rate (CO2)",
     "unit": "1/min",
-    "snomedid": 0,
+    "snomedid": "86290005",
     "format": "XX__",
     "factor": 1,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T09:17:38.958Z"
   },
   {
     "id": 53,
@@ -785,14 +785,14 @@
     "hexCode": 218,
     "description": "Insp. CO2",
     "unit": "%",
-    "snomedid": 0,
+    "snomedid": "250782007",
     "format": "XX.X",
     "factor": 10,
     "m": "X",
     "ll": true,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:02:52.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T07:59:13.951Z"
   },
   {
     "id": 54,
@@ -800,14 +800,14 @@
     "hexCode": 219,
     "description": "Endtidal CO2",
     "unit": "%",
-    "snomedid": 0,
+    "snomedid": "250790007",
     "format": "XX.X",
     "factor": 10,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:02:57.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T07:59:42.534Z"
   },
   {
     "id": 55,
@@ -815,14 +815,14 @@
     "hexCode": 227,
     "description": "Endtidal CO2",
     "unit": "kPa",
-    "snomedid": 0,
+    "snomedid": "250790007",
     "format": "XX.X",
     "factor": 1,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T07:59:51.350Z"
   },
   {
     "id": 56,
@@ -830,14 +830,14 @@
     "hexCode": 229,
     "description": "Insp. CO2",
     "unit": "mmHg",
-    "snomedid": 0,
+    "snomedid": "250782007",
     "format": "XX__",
     "factor": 1,
     "m": "X",
     "ll": true,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:00:11.750Z"
   },
   {
     "id": 57,
@@ -851,8 +851,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 58,
@@ -860,14 +860,14 @@
     "hexCode": 255,
     "description": "Insp. CO2",
     "unit": "kPa",
-    "snomedid": 0,
+    "snomedid": "250782007",
     "format": "XX.X",
     "factor": 10,
     "m": "X",
     "ll": true,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T12:03:02.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T08:00:16.617Z"
   },
   {
     "id": 59,
@@ -881,8 +881,8 @@
     "m": "X",
     "ll": true,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 60,
@@ -896,8 +896,8 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 61,
@@ -911,8 +911,8 @@
     "m": "X",
     "ll": true,
     "hl": true,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 62,
@@ -920,14 +920,14 @@
     "hexCode": 178,
     "description": "Leakage",
     "unit": "mL/min",
-    "snomedid": 0,
+    "snomedid": "-1",
     "format": "_XXX",
     "factor": 1,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T09:26:53.804Z"
   },
   {
     "id": 63,
@@ -935,14 +935,14 @@
     "hexCode": 221,
     "description": "N2O Flow",
     "unit": "mL/min",
-    "snomedid": 0,
+    "snomedid": "-1",
     "format": "XXXX",
     "factor": 1,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T10:02:56.735Z"
   },
   {
     "id": 64,
@@ -950,14 +950,14 @@
     "hexCode": 222,
     "description": "Air Flow",
     "unit": "mL/min",
-    "snomedid": 0,
+    "snomedid": "-1",
     "format": "XXXX",
     "factor": 1,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T10:01:40.215Z"
   },
   {
     "id": 65,
@@ -965,14 +965,14 @@
     "hexCode": 226,
     "description": "O2 Flow",
     "unit": "mL/min",
-    "snomedid": 0,
+    "snomedid": "427081008",
     "format": "XXXX",
     "factor": 1,
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T09:28:25.996Z"
   },
   {
     "id": 66,
@@ -986,8 +986,8 @@
     "m": " ",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 67,
@@ -995,14 +995,14 @@
     "hexCode": 74,
     "description": "Age",
     "unit": "a",
-    "snomedid": 0,
+    "snomedid": "424144002",
     "format": "__XXX",
     "factor": 1,
     "m": " ",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2023-04-13T07:56:48.860Z"
   },
   {
     "id": 68,
@@ -1016,8 +1016,8 @@
     "m": " ",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-16T09:29:07.000Z",
-    "updatedAt": "2022-01-29T11:29:33.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   },
   {
     "id": 69,
@@ -1031,7 +1031,7 @@
     "m": "X",
     "ll": false,
     "hl": false,
-    "createdAt": "2022-01-29T10:43:25.000Z",
-    "updatedAt": "2022-01-29T10:43:25.000Z"
+    "createdAt": "2022-06-19T16:20:52.000Z",
+    "updatedAt": "2022-06-19T16:20:52.000Z"
   }
 ]

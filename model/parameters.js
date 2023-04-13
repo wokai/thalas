@@ -1,7 +1,7 @@
 'use strict';
 /*******************************************************************************
  * The MIT License
- * Copyright 2021, Wolfgang Kaisers
+ * Copyright 2023, Wolfgang Kaisers
  * Permission is hereby granted, free of charge, to any person obtaining a 
  * copy of this software and associated documentation files (the "Software"), 
  * to deal in the Software without restriction, including without limitation 
@@ -61,6 +61,9 @@ class Parameters {
   }
   
   async upsert(val) {
+
+    /// Workaround ...
+    val.updatedAt = new Date();
     this.upsertToArray(val);
     return MedibusParameter.upsert(val);
   }
