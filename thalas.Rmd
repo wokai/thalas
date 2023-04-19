@@ -215,5 +215,16 @@ xenon-episode.
 
 
 
+--------------------------------------------------------------------------------
 
+<!-- ----------------------------------------------------------------------- -->
+# Angular
+<!-- ----------------------------------------------------------------------- -->
+
+The Angular frontend development environment is located in `ngThalas` project.
+For development purposes, server requests are redirected to `thalas` using
+the `proxy-config` mechanism.
+
+ - Requests to `/data/*` are redirected to `localhost:4040`
+ - the `npm start` script starts angular serving using the `proxy.config.json` file
 

@@ -298,23 +298,17 @@ overflow-y: auto;
 border: 1px solid #ddd;
 border-radius: 4px;
 }
-.tabset-dropdown > .nav-tabs > li.active:before {
-content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+content: "\e259";
 font-family: 'Glyphicons Halflings';
 display: inline-block;
 padding: 10px;
 border-right: 1px solid #ddd;
 }
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-content: "";
-border: none;
-}
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-content: "";
+content: "\e258";
 font-family: 'Glyphicons Halflings';
-display: inline-block;
-padding: 10px;
-border-right: 1px solid #ddd;
+border: none;
 }
 .tabset-dropdown > .nav-tabs > li.active {
 display: block;
@@ -393,6 +387,7 @@ identifier</a></li>
 <ul>
 <li><a href="#installation" id="toc-installation"><span class="toc-section-number">5.1</span> Installation</a></li>
 </ul></li>
+<li><a href="#angular" id="toc-angular"><span class="toc-section-number">6</span> Angular</a></li>
 </ul>
 </div>
 
@@ -421,11 +416,11 @@ record, on which device captured measurements are acquired.</li>
 entities</h2>
 <ul>
 <li>A <strong>connection</strong> is a period of successful network
-communication between a <em>thalas</em> server and a <em>device</em>.
-during the time of a connection, the server and the device can
-communicate with each other. By specifying the <em>End-Time</em>, a
-connection expires. Connections also manage Xenon RS232 interface
-status.</li>
+communication between an interface (for example a <em>thalas</em>
+server) and a <em>device</em>. during the time of a connection, the
+server and the device can communicate with each other. By specifying the
+<em>End-Time</em>, a connection expires. Connections also manage Xenon
+RS232 interface status.</li>
 <li>A <strong>RecordingSite</strong> represents a device which is placed
 in a location. In practice, this may mean for example, that a ventilator
 together with a Xenon-device is inside a defined room.</li>
@@ -441,9 +436,10 @@ associations.</p>
 <div id="recordings" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Recordings</h2>
 <p>Recordings emerge from data transfer from one or more Xenon clients
-to a thalas server. By itself, these recordings solely are associated
-with a device. Further meaningful utilization bases on association with
-a patient and this is usually done using locations.</p>
+to a thalas server. By itself, these recordings solely solely reflect an
+established communication with a device. Further meaningful utilization
+bases on association with a patient and this is usually done using
+locations.</p>
 <ul>
 <li>An <strong>episode</strong> is a series of uninterrupted
 observations captured by a single device on a single patient in a single
@@ -578,6 +574,7 @@ single xenon-episode.</p>
 <ul>
 <li>A <em>Snomed CT identifier</em> is a unique integer, applied to
 components</li>
+<li><a href="https://www.draeger.com/Library/Content/Beatmungsmodi_in_der_Intensivmedizin_nomenklatur-bk-9066354-de.pdf">Dräger</a></li>
 </ul>
 <div id="anesthesia-related-identifier" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Anesthesia related
@@ -637,7 +634,23 @@ homepage</a></p></li>
 <ul>
 <li><code>npm i date-fns chart.js chartjs-adapter-date-fns</code></li>
 </ul>
+<hr />
+<!-- ----------------------------------------------------------------------- -->
 </div>
+</div>
+<div id="angular" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Angular</h1>
+<!-- ----------------------------------------------------------------------- -->
+<p>The Angular frontend development environment is located in
+<code>ngThalas</code> project. For development purposes, server requests
+are redirected to <code>thalas</code> using the
+<code>proxy-config</code> mechanism.</p>
+<ul>
+<li>Requests to <code>/data/*</code> are redirected to
+<code>localhost:4040</code></li>
+<li>the <code>npm start</code> script starts angular serving using the
+<code>proxy.config.json</code> file</li>
+</ul>
 </div>
 
 
