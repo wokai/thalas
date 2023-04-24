@@ -10,7 +10,6 @@ output:
         number_sections: true
 ---
 
-
 --------------------------------------------------------------------------------
 
 <!-- ----------------------------------------------------------------------- -->
@@ -20,50 +19,44 @@ output:
 
 ## Basic entities
 
- - A **device** is a data-capturing computer delivering measured values via 
-   *REST*-api. A device is identified by a name and an IP-address or a MAC
+ - A **device** is a data-capturing object delivering measured values (for 
+   example via *REST*-api).
+   A device is identified by a name and an IP-address or a MAC
    address. 
-   Devices carry location identifiers which may change over time.
  - A **location** denotes an outlined physical position of a device recording.
    It can be a room inside a building (with only one device) or a defined
    place within a room containing multiple devices (for example a PACU).
+   The location may change at some time.
  - A **patient** is a person, represented by a medical record, on which 
    device captured measurements are acquired.
-   
+   As a physical (or physiological) entity, a *patient* has an internal 
+   state.
 
-## Interaction level entities
 
- - A **connection** is a period of successful network communication between an
-   interface (for example a *thalas* server) and a *device*.
-   during the time of a connection, the server and the device can communicate
+## Runtime
+
+ - The execution time of a software device is referred to as *runtime*.
+ - A *runtime* can cover multiple connections or episodes.
+
+## Connections
+
+ - A **connection** is a period of successful (network) communication between 
+   two devices (for example between *thalas* server and Xenon instances).
+   During the time of a connection, the devices can communicate
    with each other.
-   By specifying the *End-Time*, a connection expires.
+ - Connections expire. There may be an terminating event (*close* or *stop*).
+   As connections are maintained via stateless HTTP, current *end-time*
+   is the time of the last successful communication (sending or receiving).
    Connections also manage Xenon RS232 interface status.
- - A **RecordingSite** represents a device which is placed in a location.
-   In practice, this may mean for example, that a ventilator together with
-   a Xenon-device is inside a defined room.
- - A **PatientAssociation** links a patient and a *RecordingSite*.
-   For the time of this association, all related recordings can be assigned to
-   the respective patient.
-    
+ - The connection is a technical construct (basing on communication).
+   Therefore, a connection may span data from multiple patients.
 
-The entities in this level are subject to human interaction.
-Placing devices and patients in a location as well as booting of devices will
-be done manually.
-Thus, human input is required for correct establishing of associations.
+## Episode
 
+ - An **episode** is a period of connection between a 
+  *Xenon*-device and a *Dräger*-device i.e. the time between the opening
+  and closing the port.
 
-## Recordings
-
-Recordings emerge from data transfer from one or more Xenon clients to a thalas
-server.
-By itself, these recordings solely solely reflect an established communication
-with a device.
-Further meaningful utilization bases on association with a patient and this is
-usually done using locations.
-
- - An **episode** is a series of uninterrupted observations captured by a
-  single device on a single patient in a single location.
 
 These definitions shall facilitate the association of captured recordings to
 an electronic medical record. Therefore:
